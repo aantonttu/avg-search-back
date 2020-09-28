@@ -19,7 +19,8 @@ public class MoviesApplicationInit implements CommandLineRunner {
         List<Movie> movies = List.of(
                 new Movie("Harry Potter 1", "Film about 1111", "Evelin Halling1111", 9.8f),
                 new Movie("Harry Potter 2", "Film about 2222", "Evelin Halling2222", 9.5f),
-                new Movie("Harry Potter 3", "Film about 3333", "Evelin Halling3333", 9.7f)
+                new Movie("Harry Potter 3", "Film about 3333", "Evelin Halling3333", 9.1f),
+                new Movie("Harry Potter 4", "Film about 4444", "Evelin Halling4444", 9.7f)
 
         );
         movieRepository.saveAll(movies);
