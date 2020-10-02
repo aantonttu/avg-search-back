@@ -19,19 +19,24 @@ public class MoviesController {
         return movieService.findAll();
     }
 
-    @GetMapping("find/{name}")
-    public List<Movie> getMoviesByName(@PathVariable String name) {
-        return movieService.findByName(name);
-    }
-
     @GetMapping("{id}")
     public Movie getMovie(@PathVariable Long id) {
         return movieService.findById(id);
     }
 
+    @GetMapping("find/{name}")
+    public List<Movie> getMoviesByName(@PathVariable String name) {
+        return movieService.findByName(name);
+    }
+
     @PostMapping
     public Movie saveMovie(@RequestBody Movie movie) {
         return movieService.save(movie);
+    }
+
+    @PutMapping("{id}")
+    public void editMovie(@RequestBody Movie newMovie, @PathVariable Long id){
+        movieService.edit(newMovie, id);
     }
 
     @DeleteMapping("{id}")

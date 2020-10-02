@@ -7,13 +7,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 public class Movie {
     @Id
     @GeneratedValue
     private Long id;
-
     private String name;
     private String description;
     private String producer;
@@ -24,6 +24,15 @@ public class Movie {
         this.description = description;
         this.producer = producer;
         this.rating = rating;
+    }
+
+    @Override
+    public String toString() {
+        return "Movie id : " + id +
+                ", name : " + name +
+                ", description : " + description +
+                ", producer : " + producer +
+                ", rating : " + rating;
     }
 }
 

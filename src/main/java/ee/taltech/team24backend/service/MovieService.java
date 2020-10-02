@@ -39,9 +39,26 @@ public class MovieService {
 
     }
 
+    public void edit(Movie newMovie, Long id) {
+        movieRepository.findById(id)
+                .map(movie -> {
+                    movie.setName(newMovie.getName());
+                    movie.setDescription(newMovie.getDescription());
+                    movie.setProducer(newMovie.getProducer());
+                    movie.setRating(newMovie.getRating());
+                    return movieRepository.save(movie);
+                })
+                .orElseGet(() -> {
+                    newMovie.setId(id);
+                    return movieRepository.save(newMovie);
+                });
+    }
+
     public void delete(Long id) {
         Movie dbMovie = findById(id);
-        movieRepository.delete(dbMovie);
+        if (dbMovie != null) {
+            movieRepository.delete(dbMovie);
+        }
     }
 
 
