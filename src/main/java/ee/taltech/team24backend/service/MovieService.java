@@ -74,4 +74,11 @@ public class MovieService {
             return movies.subList(0,4);
         }
     }
+
+    public List<Movie> getLatest() {
+        return movieRepository.findAll().stream()
+                .sorted(Comparator.comparing(Movie::getId).reversed())
+                .collect(Collectors.toList());
+
+    }
 }

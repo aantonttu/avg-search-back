@@ -34,6 +34,11 @@ public class MoviesController {
         return movieService.getTopRated();
     }
 
+    @GetMapping("latest")
+    public List<Movie> getLatestMovies(){
+        return movieService.getLatest();
+    }
+
     @PostMapping
     public Movie saveMovie(@RequestBody Movie movie) {
         return movieService.save(movie);
