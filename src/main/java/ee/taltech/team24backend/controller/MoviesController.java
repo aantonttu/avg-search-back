@@ -29,6 +29,11 @@ public class MoviesController {
         return movieService.findByName(name);
     }
 
+    @GetMapping("rated")
+    public List<Movie> getTopRatedMovies(){
+        return movieService.getTopRated();
+    }
+
     @PostMapping
     public Movie saveMovie(@RequestBody Movie movie) {
         return movieService.save(movie);
