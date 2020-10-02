@@ -5,7 +5,6 @@ import ee.taltech.team24backend.model.Movie;
 import ee.taltech.team24backend.exceptions.MovieNotFoundException;
 import ee.taltech.team24backend.repository.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.Comparator;
