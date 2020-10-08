@@ -27,7 +27,12 @@ public class MoviesApplicationInit implements CommandLineRunner {
                 new Movie("Wendell and Wild", "Description", "Henry Selick", 4.5f, "https://cs7.pikabu.ru/post_img/big/2019/05/23/9/1558626426166757449.jpg", "thriller"),
                 new Movie("Halloween Ends", "Description", "David Gordon Green", 6.8f, "https://cs7.pikabu.ru/post_img/big/2019/05/23/9/1558626426166757449.jpg", "thriller"),
                 new Movie("Dark Harvest", "Description", "David Slade", 9.1f, "https://cs7.pikabu.ru/post_img/big/2019/05/23/9/1558626426166757449.jpg", "thriller"),
-                new Movie("Escape Room 2", "Description", "Adam Robitel", 9.7f, "https://cs7.pikabu.ru/post_img/big/2019/05/23/9/1558626426166757449.jpg", "comedy")
+                new Movie("Escape Room 21", "Description", "Adam Robitel", 7f, "https://cs7.pikabu.ru/post_img/big/2019/05/23/9/1558626426166757449.jpg", "comedy"),
+                new Movie("Escape Room 22", "Description", "Adam Robitel", 9.1f, "https://cs7.pikabu.ru/post_img/big/2019/05/23/9/1558626426166757449.jpg", "comedy"),
+                new Movie("Escape Room 23", "Description", "Adam Robitel", 9.4f, "https://cs7.pikabu.ru/post_img/big/2019/05/23/9/1558626426166757449.jpg", "comedy"),
+                new Movie("Escape Room 24", "Description", "Adam Robitel", 9.2f, "https://cs7.pikabu.ru/post_img/big/2019/05/23/9/1558626426166757449.jpg", "comedy"),
+                new Movie("Escape Room 25", "Description", "Adam Robitel", 9.7f, "https://cs7.pikabu.ru/post_img/big/2019/05/23/9/1558626426166757449.jpg", "comedy"),
+                new Movie("Escape Room 26", "Description", "Adam Robitel", 9.0f, "https://cs7.pikabu.ru/post_img/big/2019/05/23/9/1558626426166757449.jpg", "comedy")
         );
         movieRepository.saveAll(movies);
     }
