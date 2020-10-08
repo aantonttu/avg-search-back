@@ -30,13 +30,19 @@ public class MoviesController {
     }
 
     @GetMapping("rated")
-    public List<Movie> getTopRatedMovies(){
+    public List<Movie> getTopRatedMovies() {
         return movieService.getTopRated();
     }
 
     @GetMapping("latest")
-    public List<Movie> getLatestMovies(){
+    public List<Movie> getLatestMovies() {
         return movieService.getLatest();
+    }
+
+    @GetMapping("sorted")
+    public List<Movie> sortMovies(@RequestParam(value = "by", defaultValue = "name") String by,
+                                  @RequestParam(value = "order", defaultValue = "asc") String order) {
+        return movieService.sorting(by, order);
     }
 
     @PostMapping
@@ -45,7 +51,7 @@ public class MoviesController {
     }
 
     @PutMapping("{id}")
-    public void editMovie(@RequestBody Movie newMovie, @PathVariable Long id){
+    public void editMovie(@RequestBody Movie newMovie, @PathVariable Long id) {
         movieService.edit(newMovie, id);
     }
 
