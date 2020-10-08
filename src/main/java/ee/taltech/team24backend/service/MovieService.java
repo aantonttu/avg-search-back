@@ -78,7 +78,6 @@ public class MovieService {
         return movieRepository.findAll().stream()
                 .sorted(Comparator.comparing(Movie::getId).reversed())
                 .collect(Collectors.toList());
-
     }
 
     public List<Movie> sorting(String by, String order) {
