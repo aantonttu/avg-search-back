@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.Comparator;
 import java.util.List;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @Service
@@ -68,10 +67,10 @@ public class MovieService {
         List<Movie> movies = movieRepository.findAll().stream()
                 .sorted(Comparator.comparing(Movie::getRating).reversed())
                 .collect(Collectors.toList());
-        if (movies.size() < 4){
+        if (movies.size() < 4) {
             return movies;
         } else {
-            return movies.subList(0,4);
+            return movies.subList(0, 4);
         }
     }
 
@@ -79,6 +78,36 @@ public class MovieService {
         return movieRepository.findAll().stream()
                 .sorted(Comparator.comparing(Movie::getId).reversed())
                 .collect(Collectors.toList());
+    }
 
+    public List<Movie> sorting(String by, String order) {
+        if (by.equals("name")) {
+            if (order.equals("desc")) {
+                return movieRepository.findAll().stream()
+                        .sorted(Comparator.comparing(Movie::getName).reversed())
+                        .collect(Collectors.toList());
+            } else return movieRepository.findAll().stream()
+                    .sorted(Comparator.comparing(Movie::getName))
+                    .collect(Collectors.toList());
+        }
+        if (by.equals("added")) {
+            if (order.equals("desc")) {
+                return movieRepository.findAll().stream()
+                        .sorted(Comparator.comparing(Movie::getId))
+                        .collect(Collectors.toList());
+            } else return movieRepository.findAll().stream()
+                    .sorted(Comparator.comparing(Movie::getId).reversed())
+                    .collect(Collectors.toList());
+        }
+        if (by.equals("rating")) {
+            if (order.equals("desc")) {
+                return movieRepository.findAll().stream()
+                        .sorted(Comparator.comparing(Movie::getRating))
+                        .collect(Collectors.toList());
+            } else return movieRepository.findAll().stream()
+                    .sorted(Comparator.comparing(Movie::getRating).reversed())
+                    .collect(Collectors.toList());
+        }
+        return movieRepository.findAll();
     }
 }

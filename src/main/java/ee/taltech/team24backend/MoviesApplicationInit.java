@@ -17,10 +17,17 @@ public class MoviesApplicationInit implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         List<Movie> movies = List.of(
-                new Movie("Harry Potter 1", "Film about 1111", "Evelin Halling1111", 9.8f),
-                new Movie("Harry Potter 2", "Film about 2222", "Evelin Halling2222", 9.5f),
-                new Movie("Harry Potter 3", "Film about 3333", "Evelin Halling3333", 9.1f),
-                new Movie("Harry Potter 4", "Film about 4444", "Evelin Halling4444", 9.7f)
+                new Movie("Antlers", "Description", "Scott Cooper", 9.8f, "https://cs7.pikabu.ru/post_img/big/2019/05/23/9/1558626426166757449.jpg", "thriller"),
+                new Movie("Candyman", "Description", "Nia DaCosta", 6.3f, "https://cs7.pikabu.ru/post_img/big/2019/05/23/9/1558626426166757449.jpg", "thriller"),
+                new Movie("Ghostbusters: Afterlife", "Description", "Jason Reitman", 7.5f, "https://cs7.pikabu.ru/post_img/big/2019/05/23/9/1558626426166757449.jpg", "thriller"),
+                new Movie("Halloween Kills", "Description", "David Gordon Green", 9.5f, "https://cs7.pikabu.ru/post_img/big/2019/05/23/9/1558626426166757449.jpg", "thriller"),
+                new Movie("Morbius", "Description", "Daniel Espinosa", 7.9f, "https://cs7.pikabu.ru/post_img/big/2019/05/23/9/1558626426166757449.jpg", "thriller"),
+                new Movie("Spiral", "Description", "Darren Lynn Bousman", 8.1f, "https://cs7.pikabu.ru/post_img/big/2019/05/23/9/1558626426166757449.jpg", "thriller"),
+                new Movie("The Forever Purge", "Description", "Everardo Gout", 3.7f, "https://cs7.pikabu.ru/post_img/big/2019/05/23/9/1558626426166757449.jpg", "thriller"),
+                new Movie("Wendell and Wild", "Description", "Henry Selick", 4.5f, "https://cs7.pikabu.ru/post_img/big/2019/05/23/9/1558626426166757449.jpg", "thriller"),
+                new Movie("Halloween Ends", "Description", "David Gordon Green", 6.8f, "https://cs7.pikabu.ru/post_img/big/2019/05/23/9/1558626426166757449.jpg", "thriller"),
+                new Movie("Dark Harvest", "Description", "David Slade", 9.1f, "https://cs7.pikabu.ru/post_img/big/2019/05/23/9/1558626426166757449.jpg", "thriller"),
+                new Movie("Escape Room 2", "Description", "Adam Robitel", 9.7f, "https://cs7.pikabu.ru/post_img/big/2019/05/23/9/1558626426166757449.jpg", "thriller")
 
         );
         movieRepository.saveAll(movies);
