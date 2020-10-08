@@ -80,6 +80,12 @@ public class MovieService {
                 .collect(Collectors.toList());
     }
 
+    public List<Movie> getMoviesByGenres(String genre) {
+        return movieRepository.findAll().stream()
+                .filter(movie -> movie.getGenres().toLowerCase().equalsIgnoreCase(genre.toLowerCase()))
+                .collect(Collectors.toList());
+    }
+
     public List<Movie> sorting(String by, String order) {
         if (by.equals("name")) {
             if (order.equals("desc")) {
