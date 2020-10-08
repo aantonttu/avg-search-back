@@ -27,8 +27,7 @@ public class MoviesApplicationInit implements CommandLineRunner {
                 new Movie("Wendell and Wild", "Description", "Henry Selick", 4.5f, "https://cs7.pikabu.ru/post_img/big/2019/05/23/9/1558626426166757449.jpg", "thriller"),
                 new Movie("Halloween Ends", "Description", "David Gordon Green", 6.8f, "https://cs7.pikabu.ru/post_img/big/2019/05/23/9/1558626426166757449.jpg", "thriller"),
                 new Movie("Dark Harvest", "Description", "David Slade", 9.1f, "https://cs7.pikabu.ru/post_img/big/2019/05/23/9/1558626426166757449.jpg", "thriller"),
-                new Movie("Escape Room 2", "Description", "Adam Robitel", 9.7f, "https://cs7.pikabu.ru/post_img/big/2019/05/23/9/1558626426166757449.jpg", "thriller")
-
+                new Movie("Escape Room 2", "Description", "Adam Robitel", 9.7f, "https://cs7.pikabu.ru/post_img/big/2019/05/23/9/1558626426166757449.jpg", "comedy")
         );
         movieRepository.saveAll(movies);
     }
