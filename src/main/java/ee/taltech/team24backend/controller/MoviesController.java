@@ -45,6 +45,11 @@ public class MoviesController {
         return movieService.sorting(by, order);
     }
 
+    @GetMapping("genres")
+    public List<Movie> getMoviesByGenres(@RequestParam(value = "genre") String genre) {
+        return movieService.getMoviesByGenres(genre);
+    }
+
     @PostMapping
     public Movie saveMovie(@RequestBody Movie movie) {
         return movieService.save(movie);
