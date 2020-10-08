@@ -32,7 +32,8 @@ public class MoviesApplicationInit implements CommandLineRunner {
                 new Movie("Escape Room 23", "Description", "Adam Robitel", 9.4f, "https://cs7.pikabu.ru/post_img/big/2019/05/23/9/1558626426166757449.jpg", "comedy"),
                 new Movie("Escape Room 24", "Description", "Adam Robitel", 9.2f, "https://cs7.pikabu.ru/post_img/big/2019/05/23/9/1558626426166757449.jpg", "comedy"),
                 new Movie("Escape Room 25", "Description", "Adam Robitel", 9.7f, "https://cs7.pikabu.ru/post_img/big/2019/05/23/9/1558626426166757449.jpg", "comedy"),
-                new Movie("Escape Room 26", "Description", "Adam Robitel", 9.0f, "https://cs7.pikabu.ru/post_img/big/2019/05/23/9/1558626426166757449.jpg", "comedy")
+                new Movie("Escape Room 26", "Description", "Adam Robitel", 9.0f, "https://cs7.pikabu.ru/post_img/big/2019/05/23/9/1558626426166757449.jpg", "comedy"),
+                new Movie("Escape Room 26", "Description", "Adam sitel", 9f, "https://cs7.pikabu.ru/post_img/big/2019/05/23/9/1558626426166757449.jpg", "comedy")
         );
         movieRepository.saveAll(movies);
     }
