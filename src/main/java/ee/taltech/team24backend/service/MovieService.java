@@ -82,7 +82,7 @@ public class MovieService {
 
     public List<Movie> getMoviesByGenres(String genre) {
         return movieRepository.findAll().stream()
-                .filter(movie -> movie.getGenres().toLowerCase().equalsIgnoreCase(genre.toLowerCase()))
+                .filter(movie -> movie.getGenre().toLowerCase().equalsIgnoreCase(genre.toLowerCase()))
                 .collect(Collectors.toList());
     }
 
