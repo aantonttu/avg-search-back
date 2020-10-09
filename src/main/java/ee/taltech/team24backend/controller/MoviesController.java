@@ -24,8 +24,8 @@ public class MoviesController {
         return movieService.findById(id);
     }
 
-    @GetMapping("find/{name}")
-    public List<Movie> getMoviesByName(@PathVariable String name) {
+    @GetMapping("find")
+    public List<Movie> getMoviesByName(@RequestParam(value = "name") String name) {
         return movieService.findByName(name);
     }
 
