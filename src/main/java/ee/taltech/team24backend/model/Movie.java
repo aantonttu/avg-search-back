@@ -22,15 +22,19 @@ public class Movie {
     private String producer;
     private float rating;
     private String imgUrl;
-    private String genres;
+    private String genre;
+    private Integer year;
+    private Integer duration;
 
-    public Movie(String name, String description, String producer, float rating, String imgUrl, String genres) {
+    public Movie(String name, String description, String producer, float rating, String imgUrl, String genre, Integer year, Integer duration) {
         this.name = name;
         this.description = description;
         this.producer = producer;
         this.rating = rating;
         this.imgUrl = imgUrl;
-        this.genres = genres;
+        this.genre = genre;
+        this.year = year;
+        this.duration = duration;
     }
 
     @Override
@@ -40,8 +44,10 @@ public class Movie {
                 ", description : " + description +
                 ", producer : " + producer +
                 ", rating : " + rating +
-                ", imgUrl : " + imgUrl +
-                ", genres : " + genres;
+                ", year : " + year +
+                ", duration : " + duration +
+                ", genre : " + genre +
+                ", imgUrl : " + imgUrl;
     }
 
 }
