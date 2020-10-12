@@ -4,26 +4,34 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
+@Table(name = "MOVIE", schema = "schema1")
 public class Movie {
     @Id
     @GeneratedValue
+    @Column(name = "ID")
     private Long id;
-
+    @Column(name = "NAME")
     private String name;
+    @Column(name = "DESCRIPTION")
     private String description;
+    @Column(name = "PRODUCER")
     private String producer;
+    @Column(name = "RATING")
     private float rating;
+    @Column(name = "IMG_URL")
     private String imgUrl;
+    @Column(name = "GENRE")
     private String genre;
+    @Column(name = "YEAR")
     private Integer year;
+    @Column(name = "DURATION")
     private Integer duration;
 
     public Movie(String name, String description, String producer, float rating, String imgUrl, String genre, Integer year, Integer duration) {

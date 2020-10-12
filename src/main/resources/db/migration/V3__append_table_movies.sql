@@ -1,4 +1,4 @@
-INSERT INTO schema1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION, YEAR, RATING) VALUES
+INSERT INTO SCHEMA1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION, YEAR, RATING) VALUES
 (
     'Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.',
     'Drama',
@@ -10,7 +10,7 @@ INSERT INTO schema1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION,
     9.3
 );
 
-INSERT INTO schema1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION, YEAR, RATING) VALUES
+INSERT INTO SCHEMA1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION, YEAR, RATING) VALUES
 (
     'The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.',
     'Drama',
@@ -22,7 +22,7 @@ INSERT INTO schema1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION,
     9.2
 );
 
-INSERT INTO schema1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION, YEAR, RATING) VALUES
+INSERT INTO SCHEMA1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION, YEAR, RATING) VALUES
 (
     'The early life and career of Vito Corleone in 1920s New York City is portrayed, while his son, Michael, expands and tightens his grip on the family crime syndicate.',
     'Drama',
@@ -34,7 +34,7 @@ INSERT INTO schema1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION,
     9.0
 );
 
-INSERT INTO schema1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION, YEAR, RATING) VALUES
+INSERT INTO SCHEMA1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION, YEAR, RATING) VALUES
 (
     'When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.',
     'Action',
@@ -46,7 +46,7 @@ INSERT INTO schema1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION,
     9.0
 );
 
-INSERT INTO schema1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION, YEAR, RATING) VALUES
+INSERT INTO SCHEMA1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION, YEAR, RATING) VALUES
 (
     'Armed with only one word, Tenet, and fighting for the survival of the entire world, a Protagonist journeys through a twilight world of international espionage on a mission that will unfold in something beyond real time.',
     'Action',
@@ -58,7 +58,7 @@ INSERT INTO schema1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION,
     7.8
 );
 
-INSERT INTO schema1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION, YEAR, RATING) VALUES
+INSERT INTO SCHEMA1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION, YEAR, RATING) VALUES
 (
     'Sinister characters converge around a young man devoted to protecting those he loves in a postwar backwoods town teeming with corruption and brutality.',
     'Thriller',
@@ -70,7 +70,7 @@ INSERT INTO schema1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION,
     7.1
 );
 
-INSERT INTO schema1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION, YEAR, RATING) VALUES
+INSERT INTO SCHEMA1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION, YEAR, RATING) VALUES
 (
     'Based on Roald Dahl''s 1983 classic book ''The Witches'', the story tells the scary, funny and imaginative tale of a seven year old boy who has a run in with some real life witches!',
     'Comedy',
@@ -82,7 +82,7 @@ INSERT INTO schema1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION,
     6.8
 );
 
-INSERT INTO schema1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION, YEAR, RATING) VALUES
+INSERT INTO SCHEMA1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION, YEAR, RATING) VALUES
 (
     'Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.',
     'Drama',
@@ -94,7 +94,7 @@ INSERT INTO schema1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION,
     9.3
 );
 
-INSERT INTO schema1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION, YEAR, RATING) VALUES
+INSERT INTO SCHEMA1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION, YEAR, RATING) VALUES
 (
     'Successful author Veronica Henley finds herself trapped in a horrifying reality and must uncover the mind-bending mystery before it''s too late.',
     'Horror',
@@ -106,7 +106,7 @@ INSERT INTO schema1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION,
     5.5
 );
 
-INSERT INTO schema1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION, YEAR, RATING) VALUES
+INSERT INTO SCHEMA1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION, YEAR, RATING) VALUES
 (
     'In Gotham City, mentally troubled comedian Arthur Fleck is disregarded and mistreated by society. He then embarks on a downward spiral of revolution and bloody crime. This path brings him face-to-face with his alter-ego: the Joker.',
     'Drama',
@@ -118,7 +118,7 @@ INSERT INTO schema1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION,
     8.5
 );
 
-INSERT INTO schema1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION, YEAR, RATING) VALUES
+INSERT INTO SCHEMA1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION, YEAR, RATING) VALUES
 (
     'An orphaned boy enrolls in a school of wizardry, where he learns the truth about himself, his family and the terrible evil that haunts the magical world.',
     'Fantasy',
@@ -130,7 +130,7 @@ INSERT INTO schema1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION,
     7.6
 );
 
-INSERT INTO schema1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION, YEAR, RATING) VALUES
+INSERT INTO SCHEMA1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION, YEAR, RATING) VALUES
 (
     'After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos'' actions and restore balance to the universe.',
     'Action',
@@ -142,7 +142,7 @@ INSERT INTO schema1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION,
     8.4
 );
 
-INSERT INTO schema1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION, YEAR, RATING) VALUES
+INSERT INTO SCHEMA1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION, YEAR, RATING) VALUES
 (
     'Greed and class discrimination threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan.',
     'Thriller',
@@ -154,7 +154,7 @@ INSERT INTO schema1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION,
     8.6
 );
 
-INSERT INTO schema1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION, YEAR, RATING) VALUES
+INSERT INTO SCHEMA1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION, YEAR, RATING) VALUES
 (
     'A small team of U.S. soldiers battle against hundreds of Taliban fighters in Afghanistan.',
     'Action',
@@ -166,7 +166,7 @@ INSERT INTO schema1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION,
     6.7
 );
 
-INSERT INTO schema1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION, YEAR, RATING) VALUES
+INSERT INTO SCHEMA1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION, YEAR, RATING) VALUES
 (
     'A faded television actor and his stunt double strive to achieve fame and success in the final years of Hollywood''s Golden Age in 1969 Los Angeles.',
     'Comedy',
@@ -178,7 +178,7 @@ INSERT INTO schema1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION,
     7.6
 );
 
-INSERT INTO schema1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION, YEAR, RATING) VALUES
+INSERT INTO SCHEMA1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION, YEAR, RATING) VALUES
 (
     'A team of explorers travel through a wormhole in space in an attempt to ensure humanity''s survival.',
     'Drama',
@@ -190,7 +190,7 @@ INSERT INTO schema1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION,
     8.6
 );
 
-INSERT INTO schema1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION, YEAR, RATING) VALUES
+INSERT INTO SCHEMA1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION, YEAR, RATING) VALUES
 (
     'T''Challa, heir to the hidden but advanced kingdom of Wakanda, must step forward to lead his people into a new future and must confront a challenger from his country''s past.	',
     'Action',
@@ -202,7 +202,7 @@ INSERT INTO schema1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION,
     7.3
 );
 
-INSERT INTO schema1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION, YEAR, RATING) VALUES
+INSERT INTO SCHEMA1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION, YEAR, RATING) VALUES
 (
     'A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.',
     'Action',
@@ -214,7 +214,7 @@ INSERT INTO schema1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION,
     8.8
 );
 
-INSERT INTO schema1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION, YEAR, RATING) VALUES
+INSERT INTO SCHEMA1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION, YEAR, RATING) VALUES
 (
     'Years following the events of The Shining (1980), a now-adult Dan Torrance must protect a young girl with similar powers from a cult known as The True Knot, who prey on children with powers to remain immortal.',
     'Horror',
@@ -226,7 +226,7 @@ INSERT INTO schema1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION,
     7.4
 );
 
-INSERT INTO schema1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION, YEAR, RATING) VALUES
+INSERT INTO SCHEMA1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION, YEAR, RATING) VALUES
 (
     'The eccentrically macabre family moves to a bland suburb where Wednesday Addams'' friendship with the daughter of a hostile and conformist local reality show host exacerbates conflict between the families.',
     'Comedy',
@@ -238,7 +238,7 @@ INSERT INTO schema1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION,
     5.8
 );
 
-INSERT INTO schema1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION, YEAR, RATING) VALUES
+INSERT INTO SCHEMA1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION, YEAR, RATING) VALUES
 (
     'Based on the true story of Jordan Belfort, from his rise to a wealthy stock-broker living the high life to his fall involving crime, corruption and the federal government.',
     'Drama',

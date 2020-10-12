@@ -12,7 +12,7 @@ spring:
 #        temp:
 #          use_jdbc_metadata_defaults : false
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
   datasource:
     #        url: jdbc:h2:mem:db;DB_CLOSE_DELAY=-1 # this one is in memory
     url: jdbc:h2:./h2/movies;AUTO_SERVER=TRUE # this one is on the disk, notice the h2 folder and contents it creates
