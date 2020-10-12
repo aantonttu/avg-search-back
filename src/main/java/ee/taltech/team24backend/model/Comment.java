@@ -4,20 +4,24 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
+@Table(name = "COMMENT", schema = "SCHEMA1")
+
 public class Comment {
     @Id
     @GeneratedValue
+    @Column(name = "ID")
     private Long id;
+    @Column(name = "MOVIE_ID")
     private Long filmId;
+    @Column(name = "USERNAME")
     private String userName;
+    @Column(name = "TEXT")
     private String commentText;
 
     public Comment(Long filmId, String userName, String commentText) {

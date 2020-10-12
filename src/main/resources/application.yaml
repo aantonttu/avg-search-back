@@ -28,4 +28,4 @@ spring:
     user: sa
     password: sa
     url: jdbc:h2:./h2/movies
-    schemas: schema1
+    schemas: SCHEMA1

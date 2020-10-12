@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 @NoArgsConstructor
-@Table(name = "MOVIE", schema = "schema1")
+@Table(name = "MOVIE", schema = "SCHEMA1")
 public class Movie {
     @Id
     @GeneratedValue
