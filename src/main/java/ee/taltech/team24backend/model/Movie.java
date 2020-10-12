@@ -38,7 +38,7 @@ public class Movie {
 
     @Override
     public String toString() {
-        return "Movie id : " + id +
+        return "MovieApi id : " + id +
                 ", name : " + name +
                 ", description : " + description +
                 ", producer : " + producer +

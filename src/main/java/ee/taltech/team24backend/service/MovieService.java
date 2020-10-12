@@ -7,6 +7,7 @@ import ee.taltech.team24backend.repository.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -36,7 +37,7 @@ public class MovieService {
             // save will generate id for object
             return movieRepository.save(movie);
 
-        } else throw new InvalidMovieException("Movie is not added! Please input valid ");
+        } else throw new InvalidMovieException("MovieApi is not added! Please input valid ");
 
     }
 
