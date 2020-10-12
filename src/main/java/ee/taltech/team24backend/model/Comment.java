@@ -16,20 +16,20 @@ public class Comment {
     @Id
     @GeneratedValue
     private Long id;
-    private Long filmId;
+    private Long movieId;
     private String userName;
     private String commentText;
 
-    public Comment(Long filmId, String userName, String commentText) {
+    public Comment(Long movieId, String userName, String commentText) {
         this.userName = userName;
         this.commentText = commentText;
-        this.filmId = filmId;
+        this.movieId = movieId;
     }
 
     @Override
     public String toString() {
         return "Comment id : " + id +
-                ", filmId : " + filmId +
+                ", movieId : " + movieId +
                 ", name : " + userName +
                 ", commentText : " + commentText;
     }

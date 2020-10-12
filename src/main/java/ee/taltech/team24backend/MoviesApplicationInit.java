@@ -1,6 +1,8 @@
 package ee.taltech.team24backend;
 
+import ee.taltech.team24backend.model.Comment;
 import ee.taltech.team24backend.model.Movie;
+import ee.taltech.team24backend.repository.CommentRepository;
 import ee.taltech.team24backend.repository.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -13,6 +15,8 @@ public class MoviesApplicationInit implements CommandLineRunner {
 
     @Autowired
     private MovieRepository movieRepository;
+    @Autowired
+    private CommentRepository commentRepository;
 
     @Override
     public void run(String... args) throws Exception {
@@ -39,5 +43,11 @@ public class MoviesApplicationInit implements CommandLineRunner {
                 new Movie("The Wolf of Wall Street","Based on the true story of Jordan Belfort, from his rise to a wealthy stock-broker living the high life to his fall involving crime, corruption and the federal government.","Martin Scorsese", 8.2f,"https://m.media-amazon.com/images/M/MV5BMjIxMjgxNTk0MF5BMl5BanBnXkFtZTgwNjIyOTg2MDE@._V1_SY1000_CR0,0,674,1000_AL_.jpg", "Drama", 2013,180)
         );
         movieRepository.saveAll(movies);
+        List<Comment> comments = List.of(
+                new Comment(1L,"Nicola", "Fantastic movie"),
+                new Comment(1L,"Anton", "PERFECTO movie"),
+                new Comment(1L,"petja", "WOWWWWWWWWWWOWOWOW movie")
+        );
+        commentRepository.saveAll(comments);
     }
 }
