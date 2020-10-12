@@ -1,11 +1,17 @@
 package ee.taltech.team24backend.controller;
 
+import com.mashape.unirest.http.exceptions.UnirestException;
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.Request;
+import com.squareup.okhttp.Response;
 import ee.taltech.team24backend.model.Movie;
 import ee.taltech.team24backend.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.util.List;
+
 
 @RequestMapping("movies")
 @RestController
@@ -17,6 +23,54 @@ public class MoviesController {
     @GetMapping
     public List<Movie> getMovies() {
         return movieService.findAll();
+    }
+
+    @GetMapping("imdb/films")
+    public String getMoviesImdb() throws IOException, UnirestException {
+        OkHttpClient client = new OkHttpClient();
+
+        Request request = new Request.Builder()
+                .url("https://rapidapi.p.rapidapi.com/title/get-top-rated-movies")
+                .get()
+                .addHeader("x-rapidapi-host", "imdb8.p.rapidapi.com")
+                .addHeader("x-rapidapi-key", "13c5412c92msh5d9f79cb5dfc751p1ccd83jsn0c3f0ebc4708")
+                .build();
+
+        Response response = client.newCall(request).execute();
+        return response.body().string();
+
+    }
+
+    @GetMapping("imdb/details")
+    public String getMoviesImdbGenre() throws IOException, UnirestException {
+        OkHttpClient client = new OkHttpClient();
+
+        Request request = new Request.Builder()
+                .url("https://rapidapi.p.rapidapi.com/title/get-overview-details?tconst=tt0944947&currentCountry=US")
+                .get()
+                .addHeader("x-rapidapi-host", "imdb8.p.rapidapi.com")
+                .addHeader("x-rapidapi-key", "13c5412c92msh5d9f79cb5dfc751p1ccd83jsn0c3f0ebc4708")
+                .build();
+
+        Response response = client.newCall(request).execute();
+        return response.body().string();
+
+    }
+
+    @GetMapping("imdb/user-reviews")
+    public String getMoviesImdbReviews() throws IOException, UnirestException {
+        OkHttpClient client = new OkHttpClient();
+
+        Request request = new Request.Builder()
+                .url("https://rapidapi.p.rapidapi.com/title/get-user-reviews?tconst=tt0944947")
+                .get()
+                .addHeader("x-rapidapi-host", "imdb8.p.rapidapi.com")
+                .addHeader("x-rapidapi-key", "13c5412c92msh5d9f79cb5dfc751p1ccd83jsn0c3f0ebc4708")
+                .build();
+
+        Response response = client.newCall(request).execute();
+        return response.body().string();
+
     }
 
     @GetMapping("{id}")
