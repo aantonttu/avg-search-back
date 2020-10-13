@@ -84,18 +84,6 @@ INSERT INTO SCHEMA1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION,
 
 INSERT INTO SCHEMA1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION, YEAR, RATING) VALUES
 (
-    'Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.',
-    'Drama',
-    'https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg',
-    'The Shawshank Redemption',
-    'Frank Darabont',
-    144,
-    1994,
-    9.3
-);
-
-INSERT INTO SCHEMA1.MOVIE(DESCRIPTION, GENRE, IMG_URL, NAME, PRODUCER, DURATION, YEAR, RATING) VALUES
-(
     'Successful author Veronica Henley finds herself trapped in a horrifying reality and must uncover the mind-bending mystery before it''s too late.',
     'Horror',
     'https://m.media-amazon.com/images/M/MV5BOTQzYWU3NzktOGQyOC00NGNiLWE3NjAtNzQ0YzRkOTc5ODUzXkEyXkFqcGdeQXVyMjMxOTE0ODA@._V1_SY1000_SX675_AL_.jpg',

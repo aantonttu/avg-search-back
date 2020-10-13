@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 
-@RequestMapping("comment")
+@RequestMapping("comments")
 @RestController
 public class CommentController {
     @Autowired
