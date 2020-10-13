@@ -14,5 +14,5 @@
 - find movies with selected genre http://localhost:8080/api/movies/genres?genre={ genre_name }
 
 #### Comment URL properties
-- find comments for selected movie http://localhost:8080/api/comments/find?movieId={movie_id}
+- find comments for selected movie http://localhost:8080/api/comments/find?movieId={ movie_id }
 
