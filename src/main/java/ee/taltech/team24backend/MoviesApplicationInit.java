@@ -1,11 +1,22 @@
 package ee.taltech.team24backend;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.mashape.unirest.http.JsonNode;
+import com.mashape.unirest.http.Unirest;
+import com.mashape.unirest.http.exceptions.UnirestException;
+import ee.taltech.team24backend.apiProcessing.MovieApi;
+import ee.taltech.team24backend.apiProcessing.MovieId;
 import ee.taltech.team24backend.model.Movie;
 import ee.taltech.team24backend.repository.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.GetMapping;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Component
@@ -40,4 +51,38 @@ public class MoviesApplicationInit implements CommandLineRunner {
         );
         movieRepository.saveAll(movies);
     }
+
+    public List<MovieApi> getMoviesImdbApi() throws IOException, UnirestException {
+        JsonNode response = Unirest.get("https://rapidapi.p.rapidapi.com/title/get-top-rated-movies")
+                .header("x-rapidapi-host", "imdb8.p.rapidapi.com")
+                .header("x-rapidapi-key", "13c5412c92msh5d9f79cb5dfc751p1ccd83jsn0c3f0ebc4708")
+                .asJson()
+                .getBody();
+        ObjectMapper objectMapper = new ObjectMapper();
+        String jsonCarArray = response.toString();
+        objectMapper.configure(DeserializationFeature.USE_JAVA_ARRAY_FOR_JSON_ARRAY, true);
+        MovieId[] idArray = objectMapper.readValue(jsonCarArray, MovieId[].class);
+        idArray = Arrays.copyOfRange(idArray, 0, 3);
+        List<MovieApi> moviesApi = new ArrayList<>();
+        for(MovieId movieId : idArray) {
+            String[] id = movieId.getId().split("/");
+            moviesApi.add(this.getMovieDetailApi(id[id.length - 1]));
+        }
+        return moviesApi;
+    }
+
+    public MovieApi getMovieDetailApi(String movieId) throws IOException, UnirestException {
+        JsonNode response = Unirest.get("https://rapidapi.p.rapidapi.com/title/get-overview-details?tconst=" + movieId)
+                .header("x-rapidapi-host", "imdb8.p.rapidapi.com")
+                .header("x-rapidapi-key", "13c5412c92msh5d9f79cb5dfc751p1ccd83jsn0c3f0ebc4708")
+                .asJson()
+                .getBody();
+        ObjectMapper objectMapper = new ObjectMapper();
+        String jsonCarArray = response.toString();
+        objectMapper.configure(DeserializationFeature.USE_JAVA_ARRAY_FOR_JSON_ARRAY, true);
+
+        return objectMapper.readValue(jsonCarArray, MovieApi.class);
+    }
+
+
 }

@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -34,8 +35,9 @@ public class MoviesController {
         return movieService.findAll();
     }
 
+
     @GetMapping("imdb/films")
-    public MovieId[] getMoviesImdb() throws IOException, UnirestException {
+    public List<MovieApi> getMoviesImdb() throws IOException, UnirestException {
         JsonNode response = Unirest.get("https://rapidapi.p.rapidapi.com/title/get-top-rated-movies")
                 .header("x-rapidapi-host", "imdb8.p.rapidapi.com")
                 .header("x-rapidapi-key", "13c5412c92msh5d9f79cb5dfc751p1ccd83jsn0c3f0ebc4708")
@@ -46,29 +48,30 @@ public class MoviesController {
         String jsonCarArray = response.toString();
         objectMapper.configure(DeserializationFeature.USE_JAVA_ARRAY_FOR_JSON_ARRAY, true);
         MovieId[] idArray = objectMapper.readValue(jsonCarArray, MovieId[].class);
-        idArray = Arrays.copyOfRange(idArray, 0, 30);
+        idArray = Arrays.copyOfRange(idArray, 0, 3);
+        List<MovieApi> moviesApi = new ArrayList<>();
+        for(MovieId movieId : idArray) {
+            String[] id = movieId.getId().split("/");
+            moviesApi.add(this.getMovieDetailApi(id[id.length - 1]));
+        }
 
-
-
-        return idArray;
+        return moviesApi;
 
     }
 
+
     @GetMapping("imdb/details")
-    public MovieApi getMoviesImdbGenre() throws IOException, UnirestException {
-        JsonNode response = Unirest.get("https://rapidapi.p.rapidapi.com/title/get-overview-details?tconst=tt0068646")
+    public MovieApi getMovieDetailApi(String movieId) throws IOException, UnirestException {
+        JsonNode response = Unirest.get("https://rapidapi.p.rapidapi.com/title/get-overview-details?tconst=" + movieId)
                 .header("x-rapidapi-host", "imdb8.p.rapidapi.com")
                 .header("x-rapidapi-key", "13c5412c92msh5d9f79cb5dfc751p1ccd83jsn0c3f0ebc4708")
                 .asJson()
                 .getBody();
-
         ObjectMapper objectMapper = new ObjectMapper();
         String jsonCarArray = response.toString();
         objectMapper.configure(DeserializationFeature.USE_JAVA_ARRAY_FOR_JSON_ARRAY, true);
-        MovieApi idArray = objectMapper.readValue(jsonCarArray, MovieApi.class);
 
-
-        return idArray;
+        return objectMapper.readValue(jsonCarArray, MovieApi.class);
 
     }
 

@@ -10,17 +10,19 @@ import lombok.Data;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class MovieApi {
 
-    @JsonProperty("id")
-    private String id;
+//    @JsonProperty("id")
+//    private String id;
     @JsonProperty("title")
     private Title title;
     @JsonProperty("ratings")
     private Ratings ratings;
     @JsonProperty("genres")
     private List<String> genres;
-    @JsonProperty("releaseDate")
-    private String releaseDate;
+//    @JsonProperty("releaseDate")
+//    private String releaseDate;
     @JsonProperty("plotSummary")
     private PlotSummary plotSummary;
+    @JsonProperty("plotOutline")
+    private PlotOutline plotOutline;
 
 }
