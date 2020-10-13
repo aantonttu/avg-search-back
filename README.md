@@ -8,7 +8,7 @@
 
 #### Movies URL properties 
 - find by id http://localhost:8080/api/movies/{id}
-- get sorted movies http://localhost:8080/api/movies/sorted?by={ name, rating, added }&order={ asc, desc }
+- get sorted movies http://localhost:8080/api/movies/sorted?by={ name, rating, added, year }&order={ asc, desc }
 - find movie by name (not case sensitive) http://localhost:8080/api/movies/find?name={ movie_title }
 - get all currently added genres http://localhost:8080/api/movies/allGenres
 - find movies with selected genre (not case sensitive) http://localhost:8080/api/movies/genres?genre={ genre_name }
