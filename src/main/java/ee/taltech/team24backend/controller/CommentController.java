@@ -1,5 +1,6 @@
 package ee.taltech.team24backend.controller;
 
+import ee.taltech.team24backend.dto.CommentDto;
 import ee.taltech.team24backend.model.Comment;
 import ee.taltech.team24backend.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,12 +16,12 @@ public class CommentController {
     private CommentService commentService;
 
     @GetMapping
-    public List<Comment> getComments() {
+    public List<CommentDto> getComments() {
         return commentService.findAll();
     }
 
     @GetMapping("find")
-    public List<Comment> getCommentByFilmId(@RequestParam(value = "movieId") Long movieId) {
-        return commentService.findByFilmId(movieId);
+    public List<CommentDto> getCommentByFilmId(@RequestParam(value = "movieId") Long movieId) {
+        return commentService.findByMovieId(movieId);
     }
 }

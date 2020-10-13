@@ -1,6 +1,6 @@
 package ee.taltech.team24backend.controller;
 
-import ee.taltech.team24backend.model.Comment;
+import ee.taltech.team24backend.dto.MovieDto;
 import ee.taltech.team24backend.model.Movie;
 import ee.taltech.team24backend.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +16,7 @@ public class MoviesController {
     private MovieService movieService;
 
     @GetMapping
-    public List<Movie> getMovies() {
+    public List<MovieDto> getMovies() {
         return movieService.findAll();
     }
 
@@ -26,33 +26,28 @@ public class MoviesController {
     }
 
     @GetMapping("find")
-    public List<Movie> getMoviesByName(@RequestParam(value = "name") String name) {
+    public List<MovieDto> getMoviesByName(@RequestParam(value = "name") String name) {
         return movieService.findByName(name);
     }
 
-    @GetMapping("rated")
-    public List<Movie> getTopRatedMovies() {
-        return movieService.getTopRated();
-    }
-
-    @GetMapping("latest")
-    public List<Movie> getLatestMovies() {
-        return movieService.getLatest();
-    }
-
     @GetMapping("sorted")
-    public List<Movie> sortMovies(@RequestParam(value = "by", defaultValue = "name") String by,
+    public List<MovieDto> sortMovies(@RequestParam(value = "by", defaultValue = "name") String by,
                                   @RequestParam(value = "order", defaultValue = "asc") String order) {
         return movieService.sorting(by, order);
     }
 
     @GetMapping("genres")
-    public List<Movie> getMoviesByGenres(@RequestParam(value = "genre") String genre) {
+    public List<MovieDto> getMoviesByGenres(@RequestParam(value = "genre") String genre) {
         return movieService.getMoviesByGenres(genre);
     }
 
+    @GetMapping("allGenres")
+    public List<String> getAllGenres(){
+        return movieService.getAllGenres();
+    }
+
     @PostMapping
-    public Movie saveMovie(@RequestBody Movie movie) {
+    public MovieDto saveMovie(@RequestBody Movie movie) {
         return movieService.save(movie);
     }
 

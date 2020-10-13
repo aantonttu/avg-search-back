@@ -42,7 +42,7 @@ public class Comment {
     @Override
     public String toString() {
         return "Comment id : " + id +
-                ", filmId : " + movieId +
+                ", movieId : " + movieId +
                 ", name : " + userName +
                 ", commentText : " + commentText;
     }
