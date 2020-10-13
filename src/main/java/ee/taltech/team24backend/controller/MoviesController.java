@@ -1,11 +1,24 @@
 package ee.taltech.team24backend.controller;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.mashape.unirest.http.JsonNode;
+import com.mashape.unirest.http.Unirest;
+import com.mashape.unirest.http.exceptions.UnirestException;
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.Request;
+import com.squareup.okhttp.Response;
+import ee.taltech.team24backend.apiProcessing.MovieApi;
+import ee.taltech.team24backend.apiProcessing.MovieId;
 import ee.taltech.team24backend.dto.MovieDto;
 import ee.taltech.team24backend.model.Movie;
 import ee.taltech.team24backend.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @RequestMapping("movies")
