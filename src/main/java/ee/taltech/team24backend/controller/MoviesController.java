@@ -1,5 +1,6 @@
 package ee.taltech.team24backend.controller;
 
+import ee.taltech.team24backend.model.Comment;
 import ee.taltech.team24backend.model.Movie;
 import ee.taltech.team24backend.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;

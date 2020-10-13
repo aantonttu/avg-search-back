@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 
-@RequestMapping("comment")
+@RequestMapping("comments")
 @RestController
 public class CommentController {
     @Autowired
@@ -20,7 +20,7 @@ public class CommentController {
     }
 
     @GetMapping("find")
-    public List<Comment> getCommentByFilmId(@RequestParam(value = "filmId") Long filmId) {
-        return commentService.findByFilmId(filmId);
+    public List<Comment> getCommentByFilmId(@RequestParam(value = "movieId") Long movieId) {
+        return commentService.findByFilmId(movieId);
     }
 }
