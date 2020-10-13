@@ -9,6 +9,7 @@ import com.mashape.unirest.http.exceptions.UnirestException;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
+import ee.taltech.team24backend.apiProcessing.MovieApi;
 import ee.taltech.team24backend.apiProcessing.MovieId;
 import ee.taltech.team24backend.model.Movie;
 import ee.taltech.team24backend.service.MovieService;
@@ -54,18 +55,20 @@ public class MoviesController {
     }
 
     @GetMapping("imdb/details")
-    public String getMoviesImdbGenre() throws IOException, UnirestException {
-        OkHttpClient client = new OkHttpClient();
+    public MovieApi getMoviesImdbGenre() throws IOException, UnirestException {
+        JsonNode response = Unirest.get("https://rapidapi.p.rapidapi.com/title/get-overview-details?tconst=tt0068646")
+                .header("x-rapidapi-host", "imdb8.p.rapidapi.com")
+                .header("x-rapidapi-key", "13c5412c92msh5d9f79cb5dfc751p1ccd83jsn0c3f0ebc4708")
+                .asJson()
+                .getBody();
 
-        Request request = new Request.Builder()
-                .url("https://rapidapi.p.rapidapi.com/title/get-overview-details?tconst=tt0111161&currentCountry=US")
-                .get()
-                .addHeader("x-rapidapi-host", "imdb8.p.rapidapi.com")
-                .addHeader("x-rapidapi-key", "13c5412c92msh5d9f79cb5dfc751p1ccd83jsn0c3f0ebc4708")
-                .build();
+        ObjectMapper objectMapper = new ObjectMapper();
+        String jsonCarArray = response.toString();
+        objectMapper.configure(DeserializationFeature.USE_JAVA_ARRAY_FOR_JSON_ARRAY, true);
+        MovieApi idArray = objectMapper.readValue(jsonCarArray, MovieApi.class);
 
-        Response response = client.newCall(request).execute();
-        return response.body().string();
+
+        return idArray;
 
     }
 
