@@ -18,9 +18,9 @@ public class CommentService {
         return commentRepository.findAll();
     }
 
-    public List<Comment> findByFilmId(Long filmId) {
+    public List<Comment> findByFilmId(Long movieId) {
         return commentRepository.findAll().stream()
-                .filter(comment -> comment.getFilmId().equals(filmId))
+                .filter(comment -> comment.getMovieId().equals(movieId))
                 .collect(Collectors.toList());
     }
 }

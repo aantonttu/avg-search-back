@@ -20,7 +20,7 @@ public class CommentController {
     }
 
     @GetMapping("find")
-    public List<Comment> getCommentByFilmId(@RequestParam(value = "filmId") Long filmId) {
-        return commentService.findByFilmId(filmId);
+    public List<Comment> getCommentByFilmId(@RequestParam(value = "movieId") Long movieId) {
+        return commentService.findByFilmId(movieId);
     }
 }
