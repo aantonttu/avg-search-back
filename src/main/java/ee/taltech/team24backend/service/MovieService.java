@@ -152,6 +152,7 @@ public class MovieService {
         movieDto.setProducer(movie.getProducer());
         movieDto.setRating(movie.getRating());
         movieDto.setYear(movie.getYear());
+        movieDto.setComments(movie.getComments());
         return movieDto;
     }
 }
