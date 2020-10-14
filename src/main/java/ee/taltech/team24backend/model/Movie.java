@@ -1,6 +1,5 @@
 package ee.taltech.team24backend.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
