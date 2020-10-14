@@ -1,4 +1,5 @@
-# Team 24 backend
+# Team 24 (AVG) backend
+Developers : Anton Antonov, Vladislav Poljakov, German Hanmamedov
 
 ### Main URL
 - Movies : http://localhost:8080/api/movies/
