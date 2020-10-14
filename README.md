@@ -23,4 +23,5 @@ RequestBody:
   "userName": "string"
 }
 ```
+- DELETE comment http://localhost:8080/api/comments/{ comment_id }  
 
