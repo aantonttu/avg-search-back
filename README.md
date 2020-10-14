@@ -16,7 +16,8 @@
 #### Comment URL properties
 - find comments for selected movie http://localhost:8080/api/comments/find?movieId={ movie_id }
 - POST comment http://localhost:8080/api/comments/{ movie_id }  
-RequestBody:  ```sh
+RequestBody:  
+```sh
 {
   "commentText": "string",
   "userName": "string"
