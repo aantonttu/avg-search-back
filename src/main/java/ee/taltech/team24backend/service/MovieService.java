@@ -90,38 +90,87 @@ public class MovieService {
     public List<MovieDto> sorting(String by, String order) {
         if (by.equals("name")) {
             if (order.equals("desc")) {
-                return movieRepository.findAll().stream()
-                        .sorted(Comparator.comparing(Movie::getName).reversed())
-                        .map(this::convertMovie)
-                        .collect(Collectors.toList());
-            } else return movieRepository.findAll().stream()
-                    .sorted(Comparator.comparing(Movie::getName))
-                    .map(this::convertMovie)
-                    .collect(Collectors.toList());
+                return getMoviesByNameDesc();
+            } else {
+                return getMoviesByNameAsc();
+            }
         }
-        if (by.equals("added")) {
+        if (by.equals("relevance")) {
             if (order.equals("desc")) {
-                return movieRepository.findAll().stream()
-                        .sorted(Comparator.comparing(Movie::getId))
-                        .map(this::convertMovie)
-                        .collect(Collectors.toList());
-            } else return movieRepository.findAll().stream()
-                    .sorted(Comparator.comparing(Movie::getId).reversed())
-                    .map(this::convertMovie)
-                    .collect(Collectors.toList());
+                return getRelevantMoviesDesc();
+            } else {
+                return getRelevantMoviesAsc();
+            }
         }
         if (by.equals("rating")) {
             if (order.equals("desc")) {
-                return movieRepository.findAll().stream()
-                        .sorted(Comparator.comparing(Movie::getRating))
-                        .map(this::convertMovie)
-                        .collect(Collectors.toList());
-            } else return movieRepository.findAll().stream()
-                    .sorted(Comparator.comparing(Movie::getRating).reversed())
-                    .map(this::convertMovie)
-                    .collect(Collectors.toList());
+                return getMoviesByRatingDesc();
+            } else {
+                return getMoviesByRatingAsc();
+            }
         }
+        if (by.equals("year")) {
+            if (order.equals("desc")) {
+                return getMoviesByYearDesc();
+            } else {
+                return getMoviesByYearAsc();
+            }
+        }
+        return findAll();
+    }
+
+    private List<MovieDto> getMoviesByYearAsc() {
         return movieRepository.findAll().stream()
+                .sorted(Comparator.comparing(Movie::getYear))
+                .map(this::convertMovie)
+                .collect(Collectors.toList());
+    }
+
+    private List<MovieDto> getMoviesByYearDesc() {
+        return movieRepository.findAll().stream()
+                .sorted(Comparator.comparing(Movie::getYear).reversed())
+                .map(this::convertMovie)
+                .collect(Collectors.toList());
+    }
+
+    private List<MovieDto> getMoviesByRatingAsc() {
+        return movieRepository.findAll().stream()
+                .sorted(Comparator.comparing(Movie::getRating).reversed())
+                .map(this::convertMovie)
+                .collect(Collectors.toList());
+    }
+
+    private List<MovieDto> getMoviesByRatingDesc() {
+        return movieRepository.findAll().stream()
+                .sorted(Comparator.comparing(Movie::getRating))
+                .map(this::convertMovie)
+                .collect(Collectors.toList());
+    }
+
+    private List<MovieDto> getRelevantMoviesAsc() {
+        return movieRepository.findAll().stream()
+                .sorted(Comparator.comparing(Movie::getId).reversed())
+                .map(this::convertMovie)
+                .collect(Collectors.toList());
+    }
+
+    private List<MovieDto> getMoviesByNameAsc() {
+        return movieRepository.findAll().stream()
+                .sorted(Comparator.comparing(Movie::getName))
+                .map(this::convertMovie)
+                .collect(Collectors.toList());
+    }
+
+    private List<MovieDto> getMoviesByNameDesc() {
+        return movieRepository.findAll().stream()
+                .sorted(Comparator.comparing(Movie::getName).reversed())
+                .map(this::convertMovie)
+                .collect(Collectors.toList());
+    }
+
+    private List<MovieDto> getRelevantMoviesDesc() {
+        return movieRepository.findAll().stream()
+                .sorted(Comparator.comparing(Movie::getId))
                 .map(this::convertMovie)
                 .collect(Collectors.toList());
     }
