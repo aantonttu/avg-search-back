@@ -24,4 +24,15 @@ public class CommentController {
     public List<CommentDto> getCommentByFilmId(@RequestParam(value = "movieId") Long movieId) {
         return commentService.findByMovieId(movieId);
     }
+
+    @PostMapping("{movieId}")
+    public CommentDto saveComment(@PathVariable Long movieId, @RequestBody Comment comment) {
+        return commentService.getCorrectMovie(movieId, comment);
+    }
+
+    @DeleteMapping("{id}")
+    public void deleteComment(@PathVariable Long id) {
+        commentService.deleteComment(id);
+    }
+
 }

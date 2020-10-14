@@ -1,8 +1,11 @@
 package ee.taltech.team24backend.service;
 
 import ee.taltech.team24backend.dto.CommentDto;
+import ee.taltech.team24backend.exceptions.CommentNotFoundException;
+import ee.taltech.team24backend.exceptions.MovieNotFoundException;
 import ee.taltech.team24backend.exceptions.NotFoundCommentsForMovie;
 import ee.taltech.team24backend.model.Comment;
+import ee.taltech.team24backend.model.Movie;
 import ee.taltech.team24backend.repository.CommentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,10 +19,17 @@ public class CommentService {
     @Autowired
     private CommentRepository commentRepository;
 
+    @Autowired
+    private MovieService movieService;
+
     public List<CommentDto> findAll() {
         return commentRepository.findAll().stream()
                 .map(this::convertComment)
                 .collect(Collectors.toList());
+    }
+
+    public Comment findById(Long id) {
+        return commentRepository.findById(id).orElseThrow(CommentNotFoundException::new);
     }
 
     public List<CommentDto> findByMovieId(Long movieId) {
@@ -29,6 +39,28 @@ public class CommentService {
                 .collect(Collectors.toList());
         if (commentDtoList.size() == 0) throw new NotFoundCommentsForMovie();
         return commentDtoList;
+    }
+
+    public CommentDto saveComment(Movie movie, Comment comment) {
+        return convertComment(
+                commentRepository.save(new Comment(movie.getId(), comment.getUserName(), comment.getCommentText()))
+        );
+    }
+
+
+    public CommentDto getCorrectMovie(Long id, Comment comment) {
+        Movie movie = movieService.findById(id);
+        if (movie != null) {
+            return saveComment(movie, comment);
+        }
+        throw new MovieNotFoundException();
+    }
+
+    public void deleteComment(Long id) {
+        Comment dbComment = findById(id);
+        if (dbComment != null) {
+            commentRepository.delete(dbComment);
+        }
     }
 
     public CommentDto convertComment(Comment comment) {

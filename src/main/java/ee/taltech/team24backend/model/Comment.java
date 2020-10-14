@@ -39,6 +39,11 @@ public class Comment {
         this.movieId = movieId;
     }
 
+    public Comment(String userName, String commentText) {
+        this.userName = userName;
+        this.commentText = commentText;
+    }
+
     @Override
     public String toString() {
         return "Comment id : " + id +

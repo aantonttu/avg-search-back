@@ -20,6 +20,7 @@ public class MoviesController {
         return movieService.findAll();
     }
 
+
     @GetMapping("{id}")
     public Movie getMovie(@PathVariable Long id) {
         return movieService.findById(id);
@@ -32,7 +33,7 @@ public class MoviesController {
 
     @GetMapping("sorted")
     public List<MovieDto> sortMovies(@RequestParam(value = "by", defaultValue = "name") String by,
-                                  @RequestParam(value = "order", defaultValue = "asc") String order) {
+                                     @RequestParam(value = "order", defaultValue = "asc") String order) {
         return movieService.sorting(by, order);
     }
 
@@ -42,22 +43,22 @@ public class MoviesController {
     }
 
     @GetMapping("allGenres")
-    public List<String> getAllGenres(){
+    public List<String> getAllGenres() {
         return movieService.getAllGenres();
     }
 
-    @PostMapping
-    public MovieDto saveMovie(@RequestBody Movie movie) {
-        return movieService.save(movie);
-    }
-
-    @PutMapping("{id}")
-    public void editMovie(@RequestBody Movie newMovie, @PathVariable Long id) {
-        movieService.edit(newMovie, id);
-    }
-
-    @DeleteMapping("{id}")
-    public void deleteMovie(@PathVariable Long id) {
-        movieService.delete(id);
-    }
+//    @PostMapping
+//    public MovieDto saveMovie(@RequestBody Movie movie) {
+//        return movieService.save(movie);
+//    }
+//
+//    @PutMapping("{id}")
+//    public void editMovie(@RequestBody Movie newMovie, @PathVariable Long id) {
+//        movieService.edit(newMovie, id);
+//    }
+//
+//    @DeleteMapping("{id}")
+//    public void deleteMovie(@PathVariable Long id) {
+//        movieService.delete(id);
+//    }
 }
