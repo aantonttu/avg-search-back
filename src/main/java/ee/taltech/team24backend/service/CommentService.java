@@ -22,14 +22,14 @@ public class CommentService {
     @Autowired
     private MovieService movieService;
 
+    private Comment findById(Long id) {
+        return commentRepository.findById(id).orElseThrow(CommentNotFoundException::new);
+    }
+
     public List<CommentDto> findAll() {
         return commentRepository.findAll().stream()
                 .map(this::convertComment)
                 .collect(Collectors.toList());
-    }
-
-    public Comment findById(Long id) {
-        return commentRepository.findById(id).orElseThrow(CommentNotFoundException::new);
     }
 
     public List<CommentDto> findByMovieId(Long movieId) {
@@ -41,14 +41,13 @@ public class CommentService {
         return commentDtoList;
     }
 
-    public CommentDto saveComment(Movie movie, Comment comment) {
+    public CommentDto saveComment(Movie movie, CommentDto comment) {
         return convertComment(
                 commentRepository.save(new Comment(movie.getId(), comment.getUserName(), comment.getCommentText()))
         );
     }
 
-
-    public CommentDto getCorrectMovie(Long id, Comment comment) {
+    public CommentDto getCorrectMovie(Long id, CommentDto comment) {
         Movie movie = movieService.findById(id);
         if (movie != null) {
             return saveComment(movie, comment);

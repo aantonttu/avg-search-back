@@ -1,7 +1,6 @@
 package ee.taltech.team24backend.controller;
 
 import ee.taltech.team24backend.dto.MovieDto;
-import ee.taltech.team24backend.model.Movie;
 import ee.taltech.team24backend.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -22,8 +21,8 @@ public class MoviesController {
 
 
     @GetMapping("{id}")
-    public Movie getMovie(@PathVariable Long id) {
-        return movieService.findById(id);
+    public MovieDto getMovie(@PathVariable Long id) {
+        return movieService.convertMovie(movieService.findById(id));
     }
 
     @GetMapping("find")
@@ -46,19 +45,4 @@ public class MoviesController {
     public List<String> getAllGenres() {
         return movieService.getAllGenres();
     }
-
-//    @PostMapping
-//    public MovieDto saveMovie(@RequestBody Movie movie) {
-//        return movieService.save(movie);
-//    }
-//
-//    @PutMapping("{id}")
-//    public void editMovie(@RequestBody Movie newMovie, @PathVariable Long id) {
-//        movieService.edit(newMovie, id);
-//    }
-//
-//    @DeleteMapping("{id}")
-//    public void deleteMovie(@PathVariable Long id) {
-//        movieService.delete(id);
-//    }
 }
