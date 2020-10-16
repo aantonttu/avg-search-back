@@ -2,7 +2,7 @@
 Developers : Anton Antonov, Vladislav Poljakov, German Hanmamedov
 
 # Setup guide
-- Clone master branch
+- Clone main branch
 - Gradle will automatically configure project
 - If there are errors (red text) on getters and setters, so you need to press Ctrl+Shift+A in IntelliJ IDEA, write plugins and click on it, then select Marketplace tab and download Lombok plugin, then in pop-up message click Enable on Annotation Processing.
 
