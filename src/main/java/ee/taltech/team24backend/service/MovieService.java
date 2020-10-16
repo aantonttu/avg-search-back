@@ -20,6 +20,9 @@ public class MovieService {
     @Autowired
     private MovieRepository movieRepository;
 
+    @Autowired
+    private CommentService commentService;
+
     public List<MovieDto> findAll() {
         return movieRepository.findAll()
                 .stream().map(this::convertMovie)
@@ -154,7 +157,7 @@ public class MovieService {
         movieDto.setProducer(movie.getProducer());
         movieDto.setRating(movie.getRating());
         movieDto.setYear(movie.getYear());
-        movieDto.setComments(movie.getComments());
+        movieDto.setComments(movie.getComments().stream().map(comment -> commentService.convertComment(comment)).collect(Collectors.toList()));
         return movieDto;
     }
 }

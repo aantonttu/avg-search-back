@@ -1,7 +1,6 @@
 package ee.taltech.team24backend.dto;
 
 
-import ee.taltech.team24backend.model.Comment;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,5 +18,5 @@ public class MovieDto {
     private String genre;
     private Integer year;
     private Integer duration;
-    List<Comment> comments;
+    List<CommentDto> comments;
 }
