@@ -8,20 +8,27 @@ public class ApplicationLayers {
     //todo p1
     // Name 3 layers of back-end architecture. Give a brief description for each.
     // 1
-    // Description:
+    // Presentation layer
+    // Description: Presentation layer is front-end layer, it displays info that is useful to a user.
+    // ################################################################################################################
     // 2
-    // Description:
+    // Application layer
+    // Description: Application layer is layer that contains the functional business logic.
+    // ################################################################################################################
     // 3
-    // Description:
-
+    // Data layer
+    // Description: Data layer is layer which contains database.
+    // ################################################################################################################
     //todo p2
     // Do you agree with the architects? Why?
-    // Yes/No
-    // Because:
+    // Yes
+    // Because: Its much more convenient to develop a project, when each can concentrate on working with one layer.
+    //          It optimizes work with project.
 
     //todo p3
     // We use objects to transport data between different layers.
     // What is the difference between Entity and Dto? What is same between them?
-    // Answer:
+    // Answer: DTO is used to transfer data between processes. Entities are used inside domain.
+    // Same is that they store same data.
 
 }
