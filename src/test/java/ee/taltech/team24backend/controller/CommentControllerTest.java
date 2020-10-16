@@ -1,6 +1,5 @@
 package ee.taltech.team24backend.controller;
 
-import ee.taltech.team24backend.dto.MovieDto;
 import ee.taltech.team24backend.model.Comment;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import java.util.List;
+import java.util.Objects;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -25,25 +25,35 @@ class CommentControllerTest {
     private TestRestTemplate testRestTemplate;
 
     @Test
-    void comments_exits() {
-        ResponseEntity<List<Comment>> exchange = testRestTemplate.exchange("/comments", HttpMethod.GET, null, LIST_OF_COMMENTS);
-        List<Comment> comments = assertOk(exchange);
-        assertFalse(comments.isEmpty());
-    }
-
-    @Test
     void add_comment_test() {
-        Comment commentToAdd = new Comment();
+        Comment commentToAdd = new Comment("testUser", "testText");
         ResponseEntity<Comment> exchange = testRestTemplate.exchange("/comments/1", HttpMethod.POST, new HttpEntity<>(commentToAdd), Comment.class);
         Comment comment = assertOk(exchange);
         assertNotNull(comment);
     }
 
     @Test
-    void find_comment_for_film() {
-        ResponseEntity<List<Comment>> exchange = testRestTemplate.exchange("/comments/find?movieId=1", HttpMethod.GET, null, LIST_OF_COMMENTS);
+    void comments_exits() {
+        Comment commentToAdd = new Comment("testUser", "testText");
+        testRestTemplate.exchange("/comments/1", HttpMethod.POST, new HttpEntity<>(commentToAdd), Comment.class);
+        testRestTemplate.exchange("/comments/1", HttpMethod.POST, new HttpEntity<>(commentToAdd), Comment.class);
+        ResponseEntity<List<Comment>> exchange = testRestTemplate.exchange("/comments", HttpMethod.GET, null, LIST_OF_COMMENTS);
         List<Comment> comments = assertOk(exchange);
-        assertNotNull(comments);
+        assertFalse(comments.isEmpty());
+    }
+
+    @Test
+    void delete_comment() {
+        Comment commentToAdd = new Comment("testUser", "testText");
+        testRestTemplate.exchange("/comments/1", HttpMethod.POST, new HttpEntity<>(commentToAdd), Comment.class);
+        ResponseEntity<List<Comment>> exchange = testRestTemplate.exchange("/comments", HttpMethod.GET, null, LIST_OF_COMMENTS);
+        assertNotNull(exchange.getBody());
+        int size1 = exchange.getBody().size();
+        Long commentId = exchange.getBody().get(0).getId();
+        testRestTemplate.exchange("/comments/" + commentId, HttpMethod.DELETE, null, Comment.class);
+        ResponseEntity<List<Comment>> exchange1 = testRestTemplate.exchange("/comments", HttpMethod.GET, null, LIST_OF_COMMENTS);
+        Integer size2 = Objects.requireNonNull(exchange1.getBody()).size();
+        assertEquals(size1-1 ,size2);
     }
 
 

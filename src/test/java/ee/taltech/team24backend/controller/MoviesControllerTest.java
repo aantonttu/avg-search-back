@@ -99,16 +99,16 @@ public class MoviesControllerTest {
         ResponseEntity<MovieDto> exchange = testRestTemplate.exchange("/movies/" + 1,
                 HttpMethod.GET, null, MovieDto.class);
         MovieDto movie = assertOk(exchange);
-        ResponseEntity<List<String>> exchange1 = testRestTemplate.exchange("/movies/allGenres", HttpMethod.GET, null, LIST_OF_GENRES);
+        ResponseEntity<List<String>> exchange1 = testRestTemplate.exchange("/movies/genres", HttpMethod.GET, null, LIST_OF_GENRES);
         List<String> genres = assertOk(exchange1);
         assertTrue(genres.contains(movie.getGenre()));
     }
 
     @Test
     void sorting_genre_test() {
-        ResponseEntity<List<String>> exchange1 = testRestTemplate.exchange("/movies/allGenres", HttpMethod.GET, null, LIST_OF_GENRES);
+        ResponseEntity<List<String>> exchange1 = testRestTemplate.exchange("/movies/genres", HttpMethod.GET, null, LIST_OF_GENRES);
         List<String> genres = assertOk(exchange1);
-        ResponseEntity<List<MovieDto>> exchange = testRestTemplate.exchange("/movies/sorted?by=genre&order=" + genres.get(0), HttpMethod.GET, null, LIST_OF_MOVIES);
+        ResponseEntity<List<MovieDto>> exchange = testRestTemplate.exchange("/movies/sorted?genre=" + genres.get(0), HttpMethod.GET, null, LIST_OF_MOVIES);
         List<MovieDto> movies = assertOk(exchange);
         assertEquals(genres.get(0), movies.get(0).getGenre());
     }
