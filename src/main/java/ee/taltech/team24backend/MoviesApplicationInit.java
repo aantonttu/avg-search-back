@@ -7,6 +7,8 @@ import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 import ee.taltech.team24backend.apiProcessing.MovieApi;
 import ee.taltech.team24backend.apiProcessing.MovieId;
+import ee.taltech.team24backend.controller.MoviesController;
+import ee.taltech.team24backend.dto.MovieDto;
 import ee.taltech.team24backend.model.Comment;
 import ee.taltech.team24backend.model.Movie;
 import ee.taltech.team24backend.repository.MovieRepository;
@@ -28,7 +30,6 @@ public class MoviesApplicationInit implements CommandLineRunner {
     @Autowired
     private CommentService commentService;
 
-
     @Override
     public void run(String... args) throws Exception {
         List<Movie> movies = new ArrayList<>();
@@ -39,6 +40,7 @@ public class MoviesApplicationInit implements CommandLineRunner {
                     movieApi.getRatings().getRating(), movieApi.getTitle().getImage().getUrl(), movieApi.getGenres().get(0),
                     movieApi.getTitle().getYear(), movieApi.getTitle().getRunningTimeInMinutes().intValue()
             );
+
             movies.add(movie);
         }
         List<Comment> comments = List.of(
@@ -46,6 +48,9 @@ public class MoviesApplicationInit implements CommandLineRunner {
                 new Comment("Vladislav Poljakov", "like it"),
                 new Comment("German Hanmamedov", "best film ever")
         );
+
+
+
 
         movieRepository.saveAll(movies);
         for (Comment comment : comments) {

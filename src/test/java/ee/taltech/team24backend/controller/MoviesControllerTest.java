@@ -84,7 +84,7 @@ public class MoviesControllerTest {
         List<MovieDto> movies = assertOk(exchange);
         MovieDto latest = movies.get(0);
         MovieDto oldest = movies.get(movies.size() - 1);
-        assertTrue(latest.getYear() > oldest.getYear());
+        assertTrue(latest.getYear() >= oldest.getYear());
 
         ResponseEntity<List<MovieDto>> exchange1 = testRestTemplate.exchange("/movies/sorted?by=year&order=asc", HttpMethod.GET, null, LIST_OF_MOVIES);
         List<MovieDto> movies1 = assertOk(exchange1);
