@@ -20,7 +20,6 @@ Developers : Anton Antonov, Vladislav Poljakov, German Hanmamedov
 - get all currently added genres http://localhost:8080/api/movies/genres
 
 #### Comment URL properties
-- find comments for selected movie http://localhost:8080/api/comments/find?movieId={ movie_id }
 - POST comment http://localhost:8080/api/comments/{ movie_id }  
 RequestBody:  
 ```sh
