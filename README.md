@@ -6,6 +6,11 @@ Developers : Anton Antonov, Vladislav Poljakov, German Hanmamedov
 - Gradle will automatically configure project
 - If there are errors (red text) on getters and setters, so you need to press Ctrl+Shift+A in IntelliJ IDEA, write plugins and click on it, then select Marketplace tab and download Lombok plugin, then in pop-up message click Enable on Annotation Processing.
 
+## Note
+- Our backend uses external API to get films from https://rapidapi.com/apidojo/api/imdb8
+- Unfortunately there are only 500 request/month per 1 account token for free.
+- If existing token is out of requests, please register on rapidapi web and change token in src/main/java/ee/taltech/team24backend/MoviesApplicationInit.java class in getMoviesImdbApi() and getMovieDetailApi() functions.
+
 ### Main URL
 - Movies : http://localhost:8080/api/movies/
 - Comments : http://localhost:8080/api/comments/
