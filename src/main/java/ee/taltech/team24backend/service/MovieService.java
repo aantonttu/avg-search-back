@@ -106,14 +106,14 @@ public class MovieService {
 
     private List<MovieDto> getMoviesByRatingAsc() {
         return movieRepository.findAll().stream()
-                .sorted(Comparator.comparing(Movie::getRating).reversed())
+                .sorted(Comparator.comparing(Movie::getRating))
                 .map(this::convertMovie)
                 .collect(Collectors.toList());
     }
 
     private List<MovieDto> getMoviesByRatingDesc() {
         return movieRepository.findAll().stream()
-                .sorted(Comparator.comparing(Movie::getRating))
+                .sorted(Comparator.comparing(Movie::getRating).reversed())
                 .map(this::convertMovie)
                 .collect(Collectors.toList());
     }

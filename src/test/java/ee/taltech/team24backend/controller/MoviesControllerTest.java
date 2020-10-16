@@ -67,12 +67,12 @@ public class MoviesControllerTest {
     @Test
     void sorting_rating_test() {
         //rating
-        ResponseEntity<List<MovieDto>> exchange = testRestTemplate.exchange("/movies/sorted?by=rating&order=asc", HttpMethod.GET, null, LIST_OF_MOVIES);
+        ResponseEntity<List<MovieDto>> exchange = testRestTemplate.exchange("/movies/sorted?by=rating&order=desc", HttpMethod.GET, null, LIST_OF_MOVIES);
         List<MovieDto> movies = assertOk(exchange);
         MovieDto bestRating = movies.get(0);
         MovieDto worstRating = movies.get(movies.size() - 1);
 
-        ResponseEntity<List<MovieDto>> exchange1 = testRestTemplate.exchange("/movies/sorted?by=rating&order=desc", HttpMethod.GET, null, LIST_OF_MOVIES);
+        ResponseEntity<List<MovieDto>> exchange1 = testRestTemplate.exchange("/movies/sorted?by=rating&order=asc", HttpMethod.GET, null, LIST_OF_MOVIES);
         List<MovieDto> movies1 = assertOk(exchange1);
         assertEquals(movies1.get(0).getRating(), worstRating.getRating());
         assertEquals(movies1.get(movies1.size() - 1).getRating(), bestRating.getRating());
