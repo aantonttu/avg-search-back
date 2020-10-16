@@ -15,9 +15,9 @@ Developers : Anton Antonov, Vladislav Poljakov, German Hanmamedov
 #### Movies URL properties 
 - find by id http://localhost:8080/api/movies/{id}
 - get sorted movies http://localhost:8080/api/movies/sorted?by={ name, rating, added, year }&order={ asc, desc }
+- get sorted movies by genre (not case sensitive) http://localhost:8080/api/movies/sorted?genre={ genre_name }
 - find movie by name (not case sensitive) http://localhost:8080/api/movies/find?name={ movie_title }
-- get all currently added genres http://localhost:8080/api/movies/allGenres
-- find movies with selected genre (not case sensitive) http://localhost:8080/api/movies/genres?genre={ genre_name }
+- get all currently added genres http://localhost:8080/api/movies/genres
 
 #### Comment URL properties
 - find comments for selected movie http://localhost:8080/api/comments/find?movieId={ movie_id }
