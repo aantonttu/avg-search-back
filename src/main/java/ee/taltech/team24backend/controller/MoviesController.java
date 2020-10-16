@@ -19,7 +19,6 @@ public class MoviesController {
         return movieService.findAll();
     }
 
-
     @GetMapping("{id}")
     public MovieDto getMovie(@PathVariable Long id) {
         return movieService.convertMovie(movieService.findById(id));
@@ -32,16 +31,13 @@ public class MoviesController {
 
     @GetMapping("sorted")
     public List<MovieDto> sortMovies(@RequestParam(value = "by", defaultValue = "name") String by,
-                                     @RequestParam(value = "order", defaultValue = "asc") String order) {
+                                     @RequestParam(value = "order", defaultValue = "asc") String order,
+                                     @RequestParam(value = "genre", required = false) String genre) {
+        if (genre != null) return movieService.getMoviesByGenres(genre);
         return movieService.sorting(by, order);
     }
 
     @GetMapping("genres")
-    public List<MovieDto> getMoviesByGenres(@RequestParam(value = "genre") String genre) {
-        return movieService.getMoviesByGenres(genre);
-    }
-
-    @GetMapping("allGenres")
     public List<String> getAllGenres() {
         return movieService.getAllGenres();
     }
