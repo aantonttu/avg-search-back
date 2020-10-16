@@ -7,10 +7,8 @@ import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 import ee.taltech.team24backend.apiProcessing.MovieApi;
 import ee.taltech.team24backend.apiProcessing.MovieId;
-import ee.taltech.team24backend.model.Comment;
 import ee.taltech.team24backend.model.Movie;
 import ee.taltech.team24backend.repository.MovieRepository;
-import ee.taltech.team24backend.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -19,39 +17,30 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 public class MoviesApplicationInit implements CommandLineRunner {
 
     @Autowired
     private MovieRepository movieRepository;
-    @Autowired
-    private CommentService commentService;
-
 
     @Override
     public void run(String... args) throws Exception {
+        List<String> movieTitles = movieRepository.findAll().stream().map(Movie::getName).collect(Collectors.toList());
         List<Movie> movies = new ArrayList<>();
         List<MovieApi> movieApis = getMoviesImdbApi();
         for (MovieApi movieApi : movieApis) {
-            Movie movie = new Movie(
-                    movieApi.getTitle().getTitle(), movieApi.getPlotOutline().getText(), movieApi.getPlotOutline().getAuthor(),
-                    movieApi.getRatings().getRating(), movieApi.getTitle().getImage().getUrl(), movieApi.getGenres().get(0),
-                    movieApi.getTitle().getYear(), movieApi.getTitle().getRunningTimeInMinutes().intValue()
-            );
-            movies.add(movie);
+            if (!movieTitles.contains(movieApi.getTitle().getTitle())) {
+                Movie movie = new Movie(
+                        movieApi.getTitle().getTitle(), movieApi.getPlotOutline().getText(), movieApi.getPlotOutline().getAuthor(),
+                        movieApi.getRatings().getRating(), movieApi.getTitle().getImage().getUrl(), movieApi.getGenres().get(0),
+                        movieApi.getTitle().getYear(), movieApi.getTitle().getRunningTimeInMinutes().intValue()
+                );
+                movies.add(movie);
+            }
         }
-        List<Comment> comments = List.of(
-                new Comment("Anton Antonov", "10/10 oh my god."),
-                new Comment("Vladislav Poljakov", "like it"),
-                new Comment("German Hanmamedov", "best film ever")
-        );
-
         movieRepository.saveAll(movies);
-        for (Comment comment : comments) {
-            commentService.saveComment(movies.get(0), comment);
-        }
-
     }
 
     public List<MovieApi> getMoviesImdbApi() throws IOException, UnirestException {
@@ -64,7 +53,7 @@ public class MoviesApplicationInit implements CommandLineRunner {
         String jsonCarArray = response.toString();
         objectMapper.configure(DeserializationFeature.USE_JAVA_ARRAY_FOR_JSON_ARRAY, true);
         MovieId[] idArray = objectMapper.readValue(jsonCarArray, MovieId[].class);
-        idArray = Arrays.copyOfRange(idArray, 0, 1);
+        idArray = Arrays.copyOfRange(idArray, 0, 2);
         List<MovieApi> moviesApi = new ArrayList<>();
         for (MovieId movieId : idArray) {
             String[] id = movieId.getId().split("/");
@@ -82,7 +71,6 @@ public class MoviesApplicationInit implements CommandLineRunner {
         ObjectMapper objectMapper = new ObjectMapper();
         String jsonCarArray = response.toString();
         objectMapper.configure(DeserializationFeature.USE_JAVA_ARRAY_FOR_JSON_ARRAY, true);
-
         return objectMapper.readValue(jsonCarArray, MovieApi.class);
     }
 
