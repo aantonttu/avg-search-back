@@ -8,7 +8,7 @@ public class Abstraction {
     //todo p1
     // In your words (do not use wiki definitions)
     // What is abstraction? (P.S It has nothing to do with keyword abstract)
-    // Answer:
+    // Answer: Its when as an example there is class Animal and other classes are extending that.
 
     //todo p2
     // Create an abstraction of an animal of your choice.
