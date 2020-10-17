@@ -14,7 +14,7 @@ Developers : Anton Antonov, Vladislav Poljakov, German Hanmamedov
 - If existing token is out of requests, please register on rapidapi web and change token in src/main/java/ee/taltech/team24backend/MoviesApplicationInit.java class in getMoviesImdbApi() and getMovieDetailApi() functions.
 
 ## Amount of movies
-To change amount of movies just go to ```MoviesApplicationInit``` and change ```idArray``` copyrange. Should be 0 to how many you want, but more films requires more time.
+To change amount of movies just go to ```MoviesApplicationInit``` and change ```idArray``` copy range. Should be 0 to how many you want, but more films requires more time.
 
 ### Main URL
 - Movies : http://localhost:8080/api/movies/
