@@ -1,7 +1,11 @@
 package a_theory.question6.art;
 
+import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
+@RestController
+@RequestMapping("catalog")
 public class ArtCollector {
 
     //todo for question 6 there are 4 assignments in total
@@ -41,4 +45,22 @@ public class ArtCollector {
     void emptyMethodVoid(){
 
     }
+
+    @GetMapping
+    List<Painting> getAllPaintings(@RequestParam(name = "page", defaultValue = "1") Integer page,
+                                   @RequestParam(name = "size", defaultValue = "50") Integer size){
+        return emptyMethodReturnList();
+    }
+
+    @GetMapping("{id}")
+    Painting getPaintingDetails(@PathVariable Long id){
+        return emptyMethodReturn1();
+    }
+
+    @PostMapping
+    Painting addPainting(@RequestBody Painting painting){
+        return emptyMethodReturn1();
+    }
+
+
 }
