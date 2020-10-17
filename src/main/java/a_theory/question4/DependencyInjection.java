@@ -13,7 +13,8 @@ public class DependencyInjection {
 
     //todo p2
     // Bring example from your code of Dependency Injection.
-    // Paste your code here, but comment it out (we dont have that in our code)
+    // Paste your code here, but comment it out
+    // We used @Autowired to autowire relationships between beans
 
     //todo p3
     // Name 2 benefits of Dependency Injection
