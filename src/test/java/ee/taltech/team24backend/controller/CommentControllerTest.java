@@ -33,9 +33,8 @@ class CommentControllerTest {
     }
 
     @Test
-    void comments_exits() {
+    void comments_exists() {
         Comment commentToAdd = new Comment("testUser", "testText");
-        testRestTemplate.exchange("/comments/1", HttpMethod.POST, new HttpEntity<>(commentToAdd), Comment.class);
         testRestTemplate.exchange("/comments/1", HttpMethod.POST, new HttpEntity<>(commentToAdd), Comment.class);
         ResponseEntity<List<Comment>> exchange = testRestTemplate.exchange("/comments", HttpMethod.GET, null, LIST_OF_COMMENTS);
         List<Comment> comments = assertOk(exchange);
