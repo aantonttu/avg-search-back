@@ -20,11 +20,6 @@ public class CommentController {
         return commentService.findAll();
     }
 
-    @GetMapping("find")
-    public List<CommentDto> getCommentByFilmId(@RequestParam(value = "movieId") Long movieId) {
-        return commentService.findByMovieId(movieId);
-    }
-
     @PostMapping("{movieId}")
     public CommentDto saveComment(@PathVariable Long movieId, @RequestBody CommentDto comment) {
         return commentService.getCorrectMovie(movieId, comment);

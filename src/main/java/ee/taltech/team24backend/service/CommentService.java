@@ -3,7 +3,6 @@ package ee.taltech.team24backend.service;
 import ee.taltech.team24backend.dto.CommentDto;
 import ee.taltech.team24backend.exceptions.CommentNotFoundException;
 import ee.taltech.team24backend.exceptions.MovieNotFoundException;
-import ee.taltech.team24backend.exceptions.NotFoundCommentsForMovie;
 import ee.taltech.team24backend.model.Comment;
 import ee.taltech.team24backend.model.Movie;
 import ee.taltech.team24backend.repository.CommentRepository;
@@ -30,15 +29,6 @@ public class CommentService {
         return commentRepository.findAll().stream()
                 .map(this::convertComment)
                 .collect(Collectors.toList());
-    }
-
-    public List<CommentDto> findByMovieId(Long movieId) {
-        List<CommentDto> commentDtoList = commentRepository.findAll().stream()
-                .filter(comment -> comment.getMovieId().equals(movieId))
-                .map(this::convertComment)
-                .collect(Collectors.toList());
-        if (commentDtoList.size() == 0) throw new NotFoundCommentsForMovie();
-        return commentDtoList;
     }
 
     public CommentDto saveComment(Movie movie, CommentDto comment) {

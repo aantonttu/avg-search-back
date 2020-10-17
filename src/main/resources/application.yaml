@@ -25,3 +25,7 @@ spring:
     password: sa
     url: jdbc:h2:./h2/movies
     schemas: SCHEMA1
+
+logging:
+  file:
+    path: ./logs
