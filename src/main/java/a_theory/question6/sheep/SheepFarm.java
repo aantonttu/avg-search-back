@@ -1,7 +1,12 @@
 package a_theory.question6.sheep;
 
+import a_theory.question6.chocolate.Cake;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
+@RequestMapping("sheep")
+@RestController
 public class SheepFarm {
 
     //todo for question 6 there are 4 assignments in total
@@ -36,10 +41,25 @@ public class SheepFarm {
     }
 
     Sheep emptyMethodReturn1(){
-        return new Sheep();
+        return new Sheep("String");
     }
 
     void emptyMethodVoid(){
 
+    }
+
+    @PostMapping
+    Sheep addSheep(@RequestBody Sheep sheep){
+        return emptyMethodReturn1();
+    }
+
+    @DeleteMapping("{id}")
+    void deleteSheep(@PathVariable Long id) {
+        emptyMethodVoid();
+    }
+
+    @GetMapping("{id}")
+    Sheep getDetails(@PathVariable Long id) {
+        return emptyMethodReturn1();
     }
 }

@@ -6,4 +6,8 @@ public class Sheep {
     private String name;
     private Integer age;
     private String color;
+
+    public Sheep(String color) {
+        this.color = color;
+    }
 }
