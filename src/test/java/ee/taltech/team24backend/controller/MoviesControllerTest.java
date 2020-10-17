@@ -1,6 +1,8 @@
 package ee.taltech.team24backend.controller;
 
 import ee.taltech.team24backend.dto.MovieDto;
+import ee.taltech.team24backend.model.Comment;
+import ee.taltech.team24backend.model.Movie;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -10,6 +12,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -111,6 +114,46 @@ public class MoviesControllerTest {
         ResponseEntity<List<MovieDto>> exchange = testRestTemplate.exchange("/movies/sorted?genre=" + genres.get(0), HttpMethod.GET, null, LIST_OF_MOVIES);
         List<MovieDto> movies = assertOk(exchange);
         assertEquals(genres.get(0), movies.get(0).getGenre());
+    }
+
+    @Test
+    void movies_set_get_test() {
+        Movie movie = new Movie();
+        assertNotNull(movie);
+        // id
+        movie.setId((long) -1);
+        assertEquals(movie.getId(), -1);
+        // description
+        movie.setDescription("test");
+        assertEquals(movie.getDescription(), "test");
+        // duration
+        movie.setDuration(150);
+        assertEquals(movie.getDuration(), 150);
+        // genre
+        movie.setGenre("genre");
+        assertEquals(movie.getGenre(), "genre");
+        // url
+        movie.setImgUrl("url");
+        assertEquals(movie.getImgUrl(), "url");
+        // name
+        movie.setName("name");
+        assertEquals(movie.getName(), "name");
+        // producer
+        movie.setProducer("producer");
+        assertEquals(movie.getProducer(), "producer");
+        // rating
+        movie.setRating(10);
+        assertEquals(movie.getRating(), 10);
+        // year
+        movie.setYear(2020);
+        assertEquals(movie.getYear(), 2020);
+        // comment
+        Comment comment = new Comment();
+        comment.setId((long) -1);
+        List<Comment> comments = new ArrayList<>();
+        comments.add(comment);
+        movie.setComments(comments);
+        assertEquals(movie.getComments().get(0).getId(), -1);
     }
 
     private <T> T assertOk(ResponseEntity<T> exchange) {
