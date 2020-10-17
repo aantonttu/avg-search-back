@@ -1,5 +1,6 @@
 # Team 24 (AVG) backend
-Developers : Anton Antonov, Vladislav Poljakov, German Hanmamedov
+Developers : Anton Antonov, Vladislav Poljakov, German Hanmamedov  
+[Userstories](https://gitlab.cs.ttu.ee/gehanm/iti0203-2020-team24-back/-/wikis/User-stories)
 
 # Setup guide
 - Clone main branch
