@@ -1,7 +1,11 @@
 package a_theory.question6.chocolate;
 
+import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
+@RequestMapping("cakes")
+@RestController
 public class Chocolate {
 
     //todo for question 6 there are 4 assignments in total
@@ -37,10 +41,21 @@ public class Chocolate {
     }
 
     Cake emptyMethodReturn1(){
-        return new Cake();
+        return new Cake(Cake.Size.SMALL, Cake.Sweetness.MEDIUM);
     }
 
     void emptyMethodVoid(){
-
     }
+
+    @GetMapping
+    List<Cake> serach_cake(@RequestParam(name = "ingredient", required = false) String ingredient,
+                           @RequestParam(name = "topping", required = false) String topping) {
+        return emptyMethodReturnList();
+    }
+
+    @PostMapping
+    Cake add_cake(@RequestBody Cake cake){
+        return emptyMethodReturn1();
+    }
+
 }

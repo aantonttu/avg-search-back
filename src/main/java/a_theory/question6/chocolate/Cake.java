@@ -4,9 +4,21 @@ import java.util.List;
 
 public class Cake {
 
+    public enum Sweetness {
+        MEDIUM,
+        SWEET;
+    }
+
+    public enum Size {
+        BIG,
+        SMALL;
+    }
+
     private Long id;
-    private String size;
-    private String sweetness;
     private List<String> ingredients;
     private List<String> toppings;
+
+
+    public Cake(Size size, Sweetness sweetness) {
+    }
 }
