@@ -13,6 +13,9 @@ Developers : Anton Antonov, Vladislav Poljakov, German Hanmamedov
 - Unfortunately there are only 500 request/month per 1 account token for free.
 - If existing token is out of requests, please register on rapidapi web and change token in src/main/java/ee/taltech/team24backend/MoviesApplicationInit.java class in getMoviesImdbApi() and getMovieDetailApi() functions.
 
+## Amount of movies
+To change amount of movies just go to ```MoviesApplicationInit``` and change ```idArray``` copy range (line 56). Should be 0 to how many you want, but more films requires more time.
+
 ### Main URL
 - Movies : http://localhost:8080/api/movies/
 - Comments : http://localhost:8080/api/comments/
