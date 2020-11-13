@@ -17,6 +17,8 @@ build movies:
       - build/libs
   tags:
     - movies
+  before_script:
+    - chmod +x ./gradlew
   script:
     - ./gradlew assemble
 
