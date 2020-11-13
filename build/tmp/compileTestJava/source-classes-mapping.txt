@@ -1,0 +1,9 @@
+ee/taltech/team24backend/Team24backendApplicationTests.java
+ ee.taltech.team24backend.Team24backendApplicationTests
+ee/taltech/team24backend/controller/MoviesControllerTest.java
+ ee.taltech.team24backend.controller.MoviesControllerTest
+ ee.taltech.team24backend.controller.MoviesControllerTest$1
+ ee.taltech.team24backend.controller.MoviesControllerTest$2
+ee/taltech/team24backend/controller/CommentControllerTest.java
+ ee.taltech.team24backend.controller.CommentControllerTest
+ ee.taltech.team24backend.controller.CommentControllerTest$1

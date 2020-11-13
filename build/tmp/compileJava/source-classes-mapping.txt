@@ -1,0 +1,75 @@
+a_theory/question2/Gradle.java
+ a_theory.question2.Gradle
+ee/taltech/team24backend/controller/MoviesController.java
+ ee.taltech.team24backend.controller.MoviesController
+a_theory/question4/DependencyInjection.java
+ a_theory.question4.DependencyInjection
+a_theory/question1/Compilation.java
+ a_theory.question1.Compilation
+ee/taltech/team24backend/model/Comment.java
+ ee.taltech.team24backend.model.Comment
+ee/taltech/team24backend/Team24backendApplication.java
+ ee.taltech.team24backend.Team24backendApplication
+ee/taltech/team24backend/apiProcessing/MovieId.java
+ ee.taltech.team24backend.apiProcessing.MovieId
+ee/taltech/team24backend/exceptions/MovieNotFoundException.java
+ ee.taltech.team24backend.exceptions.MovieNotFoundException
+ee/taltech/team24backend/apiProcessing/Title.java
+ ee.taltech.team24backend.apiProcessing.Title
+ee/taltech/team24backend/dto/CommentDto.java
+ ee.taltech.team24backend.dto.CommentDto
+ee/taltech/team24backend/model/Movie.java
+ ee.taltech.team24backend.model.Movie
+ee/taltech/team24backend/controller/CommentController.java
+ ee.taltech.team24backend.controller.CommentController
+ee/taltech/team24backend/apiProcessing/PlotOutline.java
+ ee.taltech.team24backend.apiProcessing.PlotOutline
+ee/taltech/team24backend/apiProcessing/PlotSummary.java
+ ee.taltech.team24backend.apiProcessing.PlotSummary
+ee/taltech/team24backend/configuration/SwaggerConfig.java
+ ee.taltech.team24backend.configuration.SwaggerConfig
+ee/taltech/team24backend/apiProcessing/Ratings.java
+ ee.taltech.team24backend.apiProcessing.Ratings
+ee/taltech/team24backend/apiProcessing/MovieApi.java
+ ee.taltech.team24backend.apiProcessing.MovieApi
+ee/taltech/team24backend/repository/CommentRepository.java
+ ee.taltech.team24backend.repository.CommentRepository
+a_theory/question3/Parrot.java
+ a_theory.question3.Animal
+ a_theory.question3.Parrot
+ee/taltech/team24backend/service/MovieService.java
+ ee.taltech.team24backend.service.MovieService
+a_theory/question3/Abstraction.java
+ a_theory.question3.Abstraction
+ee/taltech/team24backend/repository/MovieRepository.java
+ ee.taltech.team24backend.repository.MovieRepository
+ee/taltech/team24backend/exceptions/CommentNotFoundException.java
+ ee.taltech.team24backend.exceptions.CommentNotFoundException
+a_theory/question5/ApplicationLayers.java
+ a_theory.question5.ApplicationLayers
+ee/taltech/team24backend/service/CommentService.java
+ ee.taltech.team24backend.service.CommentService
+ee/taltech/team24backend/dto/MovieDto.java
+ ee.taltech.team24backend.dto.MovieDto
+ee/taltech/team24backend/apiProcessing/Image.java
+ ee.taltech.team24backend.apiProcessing.Image
+a_theory/question6/chocolate/Chocolate.java
+ a_theory.question6.chocolate.Chocolate
+a_theory/question6/vineyard/Vineyard.java
+ a_theory.question6.vineyard.Vineyard
+a_theory/question6/sheep/SheepFarm.java
+ a_theory.question6.sheep.SheepFarm
+a_theory/question6/sheep/Sheep.java
+ a_theory.question6.sheep.Sheep
+a_theory/question6/vineyard/Wine.java
+ a_theory.question6.vineyard.Wine
+a_theory/question6/art/ArtCollector.java
+ a_theory.question6.art.ArtCollector
+a_theory/question6/art/Painting.java
+ a_theory.question6.art.Painting
+a_theory/question6/chocolate/Cake.java
+ a_theory.question6.chocolate.Cake
+ a_theory.question6.chocolate.Cake$Size
+ a_theory.question6.chocolate.Cake$Sweetness
+ee/taltech/team24backend/MoviesApplicationInit.java
+ ee.taltech.team24backend.MoviesApplicationInit
