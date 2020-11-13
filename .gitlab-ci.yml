@@ -26,6 +26,8 @@ test movies:
   stage: test
   tags:
     - movies
+  before_script:
+    - chmod +x ./gradlew
   script:
     - ./gradlew check
 
