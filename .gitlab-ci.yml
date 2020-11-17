@@ -5,6 +5,7 @@ stages:
 
 before_script:
   - export GRADLE_USER_HOME=`pwd`/.gradle
+  - chmod 777 /home/gitlab-runner/builds
 
 build movies:
   stage: build
