@@ -43,6 +43,7 @@ public class MoviesApplicationInit implements CommandLineRunner {
         movieRepository.saveAll(movies);
     }
 
+
     public List<MovieApi> getMoviesImdbApi() throws IOException, UnirestException {
         JsonNode response = Unirest.get("https://rapidapi.p.rapidapi.com/title/get-top-rated-movies")
                 .header("x-rapidapi-host", "imdb8.p.rapidapi.com")
