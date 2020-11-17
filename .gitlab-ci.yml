@@ -5,6 +5,7 @@ stages:
 
 before_script:
   - export GRADLE_USER_HOME=`pwd`/.gradle
+  - chmod +x ./gradlew
 
 build movies:
   stage: build
@@ -17,8 +18,6 @@ build movies:
       - build/libs
   tags:
     - movies
-  before_script:
-    - chmod +x ./gradlew
   script:
     - ./gradlew assemble
 
@@ -26,8 +25,6 @@ test movies:
   stage: test
   tags:
     - movies
-  before_script:
-    - chmod +x ./gradlew
   script:
     - ./gradlew check
 
