@@ -5,7 +5,7 @@ stages:
 
 before_script:
   - export GRADLE_USER_HOME=`pwd`/.gradle
-  - chmod +x gradlew
+  - sudo chmod +x gradlew
 
 build movies:
   stage: build
