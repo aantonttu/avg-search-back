@@ -5,7 +5,7 @@ stages:
 
 before_script:
   - export GRADLE_USER_HOME=`pwd`/.gradle
-  - chmod -R 777 /builds
+  - chmod -R 777 builds/
 
 build movies:
   stage: build
