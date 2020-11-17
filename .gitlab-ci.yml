@@ -5,7 +5,7 @@ stages:
 
 before_script:
   - export GRADLE_USER_HOME=`pwd`/.gradle
-  - sudo chmod +x gradlew
+  - chmod +x gradlew
 
 build movies:
   stage: build
@@ -36,7 +36,7 @@ deploy movies:
   tags:
     - movies
   script:
-    - mkdir -p ~/api-deployment # mkdir make folder api-deployment ~/ is under current user directory so for gitlab it would be /home/gitlab/api-deployment
-    - rm -rf ~/api-deployment/* # rm remove -rf is recursive files from api-deployment
-    - cp -r build/libs/. ~/api-deployment # cp - copy build/libs is where
-#    - sudo service movies restart  # this requires sudo rights for gitlab user
+    - mkdir -p ~/api-deployment
+    - rm -rf ~/api-deployment/*
+    - cp -r build/libs/. ~/api-deployment
+    - sudo service movies restart  # this requires sudo rights for gitlab user
