@@ -1,11 +1,10 @@
 stages:
   - build
-#  - test
+  - test
   - deploy
 
 before_script:
   - export GRADLE_USER_HOME=`pwd`/.gradle
-  - chmod -R 777 /home/gitlab-runner/builds
 
 build movies:
   stage: build
@@ -23,14 +22,14 @@ build movies:
   script:
     - ./gradlew assemble
 
-#test movies:
-#  stage: test
-#  tags:
-#    - movies
-#  before_script:
-#    - chmod +x ./gradlew
-#  script:
-#    - ./gradlew check
+test movies:
+  stage: test
+  tags:
+    - movies
+  before_script:
+    - chmod +x ./gradlew
+  script:
+    - ./gradlew check
 
 deploy movies:
   stage: deploy
