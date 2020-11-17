@@ -53,7 +53,7 @@ public class MoviesApplicationInit implements CommandLineRunner {
         String jsonCarArray = response.toString();
         objectMapper.configure(DeserializationFeature.USE_JAVA_ARRAY_FOR_JSON_ARRAY, true);
         MovieId[] idArray = objectMapper.readValue(jsonCarArray, MovieId[].class);
-        idArray = Arrays.copyOfRange(idArray, 0, 3);
+        idArray = Arrays.copyOfRange(idArray, 0, 4);
         List<MovieApi> moviesApi = new ArrayList<>();
         for (MovieId movieId : idArray) {
             String[] id = movieId.getId().split("/");
