@@ -17,8 +17,12 @@ public class Cake {
     private Long id;
     private List<String> ingredients;
     private List<String> toppings;
+    private Sweetness sweetness;
+    private Size size;
 
 
     public Cake(Size size, Sweetness sweetness) {
+        this.size = size;
+        this.sweetness = sweetness;
     }
 }
