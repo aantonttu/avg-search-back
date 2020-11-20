@@ -13,8 +13,8 @@ public class Nr3isL {
     // Substitutability is a principle in object-oriented programming stating that, in a computer program, if S is a subtype of T,
     // then objects of type T may be replaced with objects of type S without altering any of the desirable properties of the program.
     // B -> People creation example (lets play God role)
-    // We have standard class of person creation and class of black person creation(niga)
-    // Black_person is subtype of Person and all black_person objects can be replaced with whit.. just simple person objects.
+    // We have standard class of person creation and class of black person creation
+    // Black_person is subtype of Person and all Black_person objects can be replaced with Person objects.
     // example with pseudo code
 
 //    private class Person {
@@ -24,7 +24,7 @@ public class Nr3isL {
 //
 //        private String eyes_color = random('green', 'blue', 'brown');
 //        private String hair_color = random('blond', 'black', 'brown');
-//        private String skin_color = random('white, black, yelow');
+//        private String skin_color = random('white, black, yellow');
 //
 //        private String name;
 //
