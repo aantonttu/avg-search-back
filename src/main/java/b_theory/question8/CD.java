@@ -27,6 +27,8 @@ public class CD {
 
     //todo F
     // Which one is more important to start with CI or CD? Why?
+    // More important to start is CI, because CI have tests for compilation
+    // Interesting fact ->
     // CI/CD: When the build is broken, fixing it should be the priority for the team. And the importance of fixing it should be a shared mindset in the culture.
     // Because: Every time a build is broken, no one else can continue pushing code changes.
 }
