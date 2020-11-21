@@ -48,9 +48,9 @@ public class Chocolate {
     }
 
     @GetMapping
-    List<Cake> serach_cake(@RequestParam(name = "ingredient", required = false) String ingredient,
+    List<Cake> serachCake(@RequestParam(name = "ingredient", required = false) String ingredient,
                            @RequestParam(name = "size", required = false) Cake.Size size,
-                           @RequestParam(name = "ingredient", required = false) Cake.Sweetness sweetness,
+                           @RequestParam(name = "sweetness", required = false) Cake.Sweetness sweetness,
                            @RequestParam(name = "topping", required = false) String topping) {
         return emptyMethodReturnList();
     }
@@ -61,7 +61,7 @@ public class Chocolate {
     }
 
     @PostMapping
-    Cake add_cake(@RequestBody Cake cake){
+    Cake addCake(@RequestBody Cake cake){
         return emptyMethodReturn1();
     }
 
