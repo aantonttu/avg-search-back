@@ -30,12 +30,6 @@ logging:
   file:
     path: ./logs
 
-users:
-  userName: user
-  userPassword: user1
-  adminName: admin
-  adminPassword: admin1
-
 jwt:
   secret: secret
-  duration: 5
+  durationMin: 15
