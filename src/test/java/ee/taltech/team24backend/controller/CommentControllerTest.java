@@ -1,6 +1,7 @@
 package ee.taltech.team24backend.controller;
 
 import ee.taltech.team24backend.model.Comment;
+import org.junit.Ignore;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -25,6 +26,7 @@ class CommentControllerTest {
     private TestRestTemplate testRestTemplate;
 
     @Test
+    @Ignore
     void add_comment_test() {
         Comment commentToAdd = new Comment("testUser", "testText");
         ResponseEntity<Comment> exchange = testRestTemplate.exchange("/comments/1", HttpMethod.POST, new HttpEntity<>(commentToAdd), Comment.class);
@@ -33,6 +35,7 @@ class CommentControllerTest {
     }
 
     @Test
+    @Ignore
     void comments_exists() {
         Comment commentToAdd = new Comment("testUser", "testText");
         testRestTemplate.exchange("/comments/1", HttpMethod.POST, new HttpEntity<>(commentToAdd), Comment.class);
@@ -42,6 +45,7 @@ class CommentControllerTest {
     }
 
     @Test
+    @Ignore
     void delete_comment() {
         Comment commentToAdd = new Comment("testUser", "testText");
         testRestTemplate.exchange("/comments/1", HttpMethod.POST, new HttpEntity<>(commentToAdd), Comment.class);
