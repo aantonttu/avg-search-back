@@ -3,11 +3,12 @@ package ee.taltech.team24backend.controller;
 import ee.taltech.team24backend.dto.MovieDto;
 import ee.taltech.team24backend.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RequestMapping({"movies", "movies2"})
+@RequestMapping("movies")
 @RestController
 public class MoviesController {
 
