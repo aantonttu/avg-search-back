@@ -42,6 +42,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf().disable()
                 .headers().httpStrictTransportSecurity().disable()
                 .and()
+                .headers().frameOptions().sameOrigin()
+                .and()
                 .addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class)
                 .sessionManagement()
                 .sessionCreationPolicy(STATELESS)
@@ -51,12 +53,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/").permitAll()
                 .antMatchers(HttpMethod.GET, "/movies/**").permitAll()
+                .antMatchers("/swagger-ui/**").permitAll()
                 .antMatchers("/users/register").permitAll()
                 .antMatchers("/users/login").permitAll()
                 .antMatchers("/h2-console/**").permitAll()
                 .anyRequest().fullyAuthenticated()
-                .and()
-                .csrf().ignoringAntMatchers("/h2-console/**")
         ;
     }
     @Override
