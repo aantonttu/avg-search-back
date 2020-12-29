@@ -31,7 +31,7 @@ public class MovieService {
 
     public List<MovieDto> findByName(String name) {
         return movieRepository.findAll().stream()
-                .filter(movie -> movie.getName().toLowerCase().startsWith(name.toLowerCase()))
+                .filter(movie -> movie.getName().toLowerCase().contains(name.toLowerCase()))
                 .map(this::convertMovie)
                 .collect(Collectors.toList());
     }
