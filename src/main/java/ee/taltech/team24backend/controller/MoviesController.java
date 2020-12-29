@@ -1,6 +1,7 @@
 package ee.taltech.team24backend.controller;
 
 import ee.taltech.team24backend.dto.MovieDto;
+import ee.taltech.team24backend.security.Roles;
 import ee.taltech.team24backend.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
@@ -41,5 +42,11 @@ public class MoviesController {
     @GetMapping("genres")
     public List<String> getAllGenres() {
         return movieService.getAllGenres();
+    }
+
+    @Secured(Roles.ADMIN)
+    @DeleteMapping("{id}")
+    public void deleteComment(@PathVariable Long id) {
+        movieService.deleteMovie(id);
     }
 }

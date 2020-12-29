@@ -146,6 +146,13 @@ public class MovieService {
                 .collect(Collectors.toList());
     }
 
+    public void deleteMovie(Long id) {
+        Movie dbMovie = findById(id);
+        if (dbMovie != null) {
+            movieRepository.delete(dbMovie);
+        }
+    }
+
     public MovieDto convertMovie(Movie movie) {
         MovieDto movieDto = new MovieDto();
         movieDto.setId(movie.getId());
