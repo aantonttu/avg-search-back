@@ -5,17 +5,15 @@ import ee.taltech.team24backend.dto.authDto.LoginDto;
 import ee.taltech.team24backend.dto.authDto.LoginResponse;
 import ee.taltech.team24backend.dto.authDto.RegisterDto;
 import ee.taltech.team24backend.model.User;
+import ee.taltech.team24backend.security.Roles;
 import ee.taltech.team24backend.security.UserSessionHolder;
 import ee.taltech.team24backend.service.LoginService;
 import ee.taltech.team24backend.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -46,5 +44,11 @@ public class UserController {
     @GetMapping("me")
     public Object getMe() {
         return UserSessionHolder.getLoggedInUser();
+    }
+
+    @Secured(Roles.ADMIN)
+    @DeleteMapping("{id}")
+    public void deleteUser(@PathVariable Long id) {
+        userService.deleteUser(id);
     }
 }

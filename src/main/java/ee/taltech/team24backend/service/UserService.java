@@ -54,5 +54,15 @@ public class UserService {
         return userDto;
     }
 
+    public User findById(Long id) throws RuntimeException {
+        return usersRepository.findById(id).orElseThrow(UserException::new);
+    }
+
+    public void deleteUser(Long id){
+        User dbUser = findById(id);
+        if (dbUser != null) {
+            usersRepository.delete(dbUser);
+        }
+    }
 
 }
