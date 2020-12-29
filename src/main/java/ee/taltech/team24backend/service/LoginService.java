@@ -1,17 +1,15 @@
 package ee.taltech.team24backend.service;
 
-import ee.taltech.team24backend.dto.userDto.LoginDto;
-import ee.taltech.team24backend.dto.userDto.LoginResponse;
+import ee.taltech.team24backend.dto.authDto.LoginDto;
+import ee.taltech.team24backend.dto.authDto.LoginResponse;
 import ee.taltech.team24backend.exceptions.UserException;
 import ee.taltech.team24backend.security.JwtTokenProvider;
 import ee.taltech.team24backend.security.ThisUser;
-import ee.taltech.team24backend.security.ThisUserDetailsService;
 
 import lombok.AllArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import static org.apache.http.util.TextUtils.isBlank;

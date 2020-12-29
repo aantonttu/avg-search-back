@@ -1,13 +1,19 @@
 package ee.taltech.team24backend.service;
 
-import ee.taltech.team24backend.dto.userDto.RegisterDto;
+import ee.taltech.team24backend.dto.MovieDto;
+import ee.taltech.team24backend.dto.UserDto;
+import ee.taltech.team24backend.dto.authDto.RegisterDto;
 import ee.taltech.team24backend.exceptions.UserException;
+import ee.taltech.team24backend.model.Movie;
 import ee.taltech.team24backend.model.User;
 import ee.taltech.team24backend.repository.UsersRepository;
 import ee.taltech.team24backend.security.EnumRole;
 import lombok.AllArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.apache.http.util.TextUtils.isBlank;
 
@@ -32,4 +38,21 @@ public class UserService {
         usersRepository.save(user);
         //email sent out to confirm it, not necessary fot iti0203
     }
+
+    public List<UserDto> findAll() {
+        return usersRepository.findAll()
+                .stream().map(this::convertUser)
+                .collect(Collectors.toList());
+    }
+
+    public UserDto convertUser(User user) {
+        UserDto userDto = new UserDto();
+        userDto.setId(user.getId());
+        userDto.setPassword(user.getPassword());
+        userDto.setRole(user.getRole());
+        userDto.setUsername(user.getUsername());
+        return userDto;
+    }
+
+
 }

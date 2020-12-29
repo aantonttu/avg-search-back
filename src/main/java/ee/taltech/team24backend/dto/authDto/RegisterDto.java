@@ -1,4 +1,4 @@
-package ee.taltech.team24backend.dto.userDto;
+package ee.taltech.team24backend.dto.authDto;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

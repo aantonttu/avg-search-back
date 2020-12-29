@@ -1,4 +1,4 @@
-package ee.taltech.team24backend.dto.userDto;
+package ee.taltech.team24backend.dto.authDto;
 
 import ee.taltech.team24backend.security.EnumRole;
 import lombok.Builder;
