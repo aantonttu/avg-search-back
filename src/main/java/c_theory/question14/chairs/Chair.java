@@ -10,6 +10,6 @@ public class Chair {
     private LocalDate released;
     private BigDecimal price;
     private BigDecimal regularPrice;
-//    ... many more
     private Designer designer;
+    private boolean inStock;
 }
