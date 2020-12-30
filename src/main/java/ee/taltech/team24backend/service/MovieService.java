@@ -149,6 +149,7 @@ public class MovieService {
     public void deleteMovie(Long id) {
         Movie dbMovie = findById(id);
         if (dbMovie != null) {
+            commentService.deleteAllMovieComments(dbMovie);
             movieRepository.delete(dbMovie);
         }
     }

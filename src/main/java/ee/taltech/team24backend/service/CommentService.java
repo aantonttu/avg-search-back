@@ -60,4 +60,10 @@ public class CommentService {
         commentDto.setCommentText(comment.getCommentText());
         return commentDto;
     }
+
+    public void deleteAllMovieComments(Movie movie) {
+        for (Comment comment : movie.getComments()) {
+            deleteComment(comment.getId());
+        }
+    }
 }
