@@ -10,6 +10,7 @@ public class Lesson {
     private Duration duration;
     private String description;
     private List<String> materials;
+    private Long year;
     //    ... many more
     private List<Students> students;
 }
