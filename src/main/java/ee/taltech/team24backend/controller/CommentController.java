@@ -22,7 +22,6 @@ public class CommentController {
         return commentService.findAll();
     }
 
-    @Secured(Roles.ADMIN)
     @DeleteMapping("{id}")
     public void deleteComment(@PathVariable Long id) {
         commentService.deleteComment(id);
