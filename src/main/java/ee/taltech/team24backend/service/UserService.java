@@ -31,6 +31,9 @@ public class UserService {
         if (isBlank(registerDto.getPassword())) {
             throw new UserException("missing password");
         }
+        if (usersRepository.findAllByUsername(registerDto.getUsername()).size() > 0){
+            throw new UserException("current user is already registered.");
+        }
         User user = new User();
         user.setUsername(registerDto.getUsername());
         user.setPassword(passwordEncoder.encode(registerDto.getPassword()));
