@@ -1,10 +1,8 @@
 package ee.taltech.team24backend.service;
 
-import ee.taltech.team24backend.dto.MovieDto;
 import ee.taltech.team24backend.dto.UserDto;
 import ee.taltech.team24backend.dto.authDto.RegisterDto;
 import ee.taltech.team24backend.exceptions.UserException;
-import ee.taltech.team24backend.model.Movie;
 import ee.taltech.team24backend.model.User;
 import ee.taltech.team24backend.repository.UsersRepository;
 import ee.taltech.team24backend.security.EnumRole;
@@ -39,7 +37,6 @@ public class UserService {
         user.setPassword(passwordEncoder.encode(registerDto.getPassword()));
         user.setRole(EnumRole.USER);
         usersRepository.save(user);
-        //email sent out to confirm it, not necessary fot iti0203
     }
 
     public List<UserDto> findAll() {
