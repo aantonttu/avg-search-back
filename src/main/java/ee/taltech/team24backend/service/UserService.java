@@ -29,7 +29,7 @@ public class UserService {
         if (isBlank(registerDto.getPassword())) {
             throw new UserException("missing password");
         }
-        if (usersRepository.findAllByUsername(registerDto.getUsername()).size() > 0){
+        if (usersRepository.findAllByUsername(registerDto.getUsername()).size() > 0) {
             throw new UserException("current user is already registered.");
         }
         User user = new User();
@@ -58,11 +58,10 @@ public class UserService {
         return usersRepository.findById(id).orElseThrow(UserException::new);
     }
 
-    public void deleteUser(Long id){
+    public void deleteUser(Long id) {
         User dbUser = findById(id);
         if (dbUser != null) {
             usersRepository.delete(dbUser);
         }
     }
-
 }
