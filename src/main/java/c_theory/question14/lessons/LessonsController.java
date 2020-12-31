@@ -55,7 +55,7 @@ public class LessonsController {
 
     //todo F create a method to delete a lesson
     @DeleteMapping("{name}")
-    public void deleteComment(@PathVariable String name) {
+    public void deleteLesson(@PathVariable String name) {
     }
 
     //todo G assuming each Lesson has students (one-to-many relation) create a method to query lesson's students
