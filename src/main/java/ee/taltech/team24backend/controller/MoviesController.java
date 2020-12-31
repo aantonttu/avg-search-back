@@ -1,5 +1,6 @@
 package ee.taltech.team24backend.controller;
 
+import ee.taltech.team24backend.dto.CommentDto;
 import ee.taltech.team24backend.dto.MovieDto;
 import ee.taltech.team24backend.security.Roles;
 import ee.taltech.team24backend.service.MovieService;
@@ -48,5 +49,11 @@ public class MoviesController {
     @DeleteMapping("{id}")
     public void deleteComment(@PathVariable Long id) {
         movieService.deleteMovie(id);
+    }
+
+    @Secured(Roles.USER)
+    @PostMapping("{id}/comments")
+    public MovieDto saveComment(@PathVariable Long id, @RequestBody CommentDto comment) {
+        return movieService.saveComment(id, comment);
     }
 }

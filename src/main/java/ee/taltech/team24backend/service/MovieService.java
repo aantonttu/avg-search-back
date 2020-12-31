@@ -1,5 +1,6 @@
 package ee.taltech.team24backend.service;
 
+import ee.taltech.team24backend.dto.CommentDto;
 import ee.taltech.team24backend.dto.MovieDto;
 import ee.taltech.team24backend.model.Movie;
 import ee.taltech.team24backend.exceptions.MovieNotFoundException;
@@ -154,6 +155,15 @@ public class MovieService {
         }
     }
 
+    public MovieDto saveComment(Long id, CommentDto comment) {
+        Movie dbMovie = findById(id);
+        if (dbMovie != null) {
+            commentService.saveComment(id, comment);
+            return convertMovie(findById(id));
+        }
+        throw new MovieNotFoundException();
+    }
+
     public MovieDto convertMovie(Movie movie) {
         MovieDto movieDto = new MovieDto();
         movieDto.setId(movie.getId());
@@ -168,4 +178,6 @@ public class MovieService {
         movieDto.setComments(movie.getComments().stream().map(comment -> commentService.convertComment(comment)).collect(Collectors.toList()));
         return movieDto;
     }
+
+
 }

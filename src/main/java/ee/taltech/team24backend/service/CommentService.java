@@ -2,7 +2,6 @@ package ee.taltech.team24backend.service;
 
 import ee.taltech.team24backend.dto.CommentDto;
 import ee.taltech.team24backend.exceptions.CommentNotFoundException;
-import ee.taltech.team24backend.exceptions.MovieNotFoundException;
 import ee.taltech.team24backend.model.Comment;
 import ee.taltech.team24backend.model.Movie;
 import ee.taltech.team24backend.repository.CommentRepository;
@@ -18,9 +17,6 @@ public class CommentService {
     @Autowired
     private CommentRepository commentRepository;
 
-    @Autowired
-    private MovieService movieService;
-
     private Comment findById(Long id) {
         return commentRepository.findById(id).orElseThrow(CommentNotFoundException::new);
     }
@@ -31,18 +27,8 @@ public class CommentService {
                 .collect(Collectors.toList());
     }
 
-    public CommentDto saveComment(Movie movie, CommentDto comment) {
-        return convertComment(
-                commentRepository.save(new Comment(movie.getId(), comment.getUserName(), comment.getCommentText()))
-        );
-    }
-
-    public CommentDto getCorrectMovie(Long id, CommentDto comment) {
-        Movie movie = movieService.findById(id);
-        if (movie != null) {
-            return saveComment(movie, comment);
-        }
-        throw new MovieNotFoundException();
+    public void saveComment(Long movieId, CommentDto comment) {
+        commentRepository.save(new Comment(movieId, comment.getUserName(), comment.getCommentText()));
     }
 
     public void deleteComment(Long id) {
