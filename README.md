@@ -30,7 +30,6 @@ To change amount of movies just go to ```MoviesApplicationInit``` and change ```
 - find movie by name (not case sensitive) http://localhost:8080/api/movies?name={ movie_title }
 - get all currently added genres http://localhost:8080/api/movies/genres
 - POST comment http://localhost:8080/api/movies/{ movie_id }/comments  
-RequestBody:  
 ```sh
 {
   "commentText": "string",
@@ -43,7 +42,6 @@ RequestBody:
 
 #### User URL properties
 - Register : http://localhost:8080/api/users/register  
-RequestBody:  
 ```sh
 {
   "username": "string",
@@ -51,7 +49,6 @@ RequestBody:
 }
 ```
 - Login : http://localhost:8080/api/users/Login  
-RequestBody:  
 ```sh
 {
   "username": "string",
