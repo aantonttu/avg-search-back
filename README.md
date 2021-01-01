@@ -21,16 +21,15 @@ To change amount of movies just go to ```MoviesApplicationInit``` and change ```
 - Comments : http://localhost:8080/api/comments/
 - SWAGGER : http://localhost:8080/api/swagger-ui/
 - H2 console : http://localhost:8080/api/h2-console/
+- AWS : http://13.48.127.84/
 
 #### Movies URL properties 
 - find by id http://localhost:8080/api/movies/{id}
-- get sorted movies http://localhost:8080/api/movies/sorted?by={ name, rating, relevance, year }&order={ asc, desc }
-- get sorted movies by genre (not case sensitive) http://localhost:8080/api/movies/sorted?genre={ genre_name }
-- find movie by name (not case sensitive) http://localhost:8080/api/movies/find?name={ movie_title }
+- get sorted movies http://localhost:8080/api/movies?by={ name, rating, relevance, year }&order={ asc, desc }
+- get sorted movies by genre (not case sensitive) http://localhost:8080/api/movies?genre={ genre_name }
+- find movie by name (not case sensitive) http://localhost:8080/api/movies?name={ movie_title }
 - get all currently added genres http://localhost:8080/api/movies/genres
-
-#### Comment URL properties
-- POST comment http://localhost:8080/api/comments/{ movie_id }  
+- POST comment http://localhost:8080/api/movies/{ movie_id }/comments
 RequestBody:  
 ```sh
 {
@@ -38,5 +37,28 @@ RequestBody:
   "userName": "string"
 }
 ```
+
+#### Comment URL properties
 - DELETE comment http://localhost:8080/api/comments/{ comment_id }  
+
+#### User URL properties
+- Register : http://localhost:8080/api/users/register
+RequestBody:  
+```sh
+{
+  "username": "string",
+  "password": "string"
+}
+```
+- Login : http://localhost:8080/api/users/Login
+RequestBody:  
+```sh
+{
+  "username": "string",
+  "password": "string"
+}
+```
+- Get logged in user: http://localhost:8080/api/users/me
+- DELETE user: http://localhost:8080/api/users/{ user_id }
+
 
