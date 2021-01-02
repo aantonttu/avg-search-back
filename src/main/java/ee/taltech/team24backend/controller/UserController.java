@@ -27,6 +27,7 @@ public class UserController {
     private final LoginService loginService;
     private final CommentService commentService;
 
+    @Secured(Roles.ADMIN)
     @GetMapping
     public List<UserDto> getAllUsers() {
         return userService.findAll();
