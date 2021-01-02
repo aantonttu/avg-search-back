@@ -25,7 +25,7 @@ To change amount of movies just go to ```MoviesApplicationInit``` and change ```
 - AWS : http://13.48.127.84/
 
 #### Movies URL properties 
-- find by id http://localhost:8080/api/movies/{id}
+- find by id http://localhost:8080/api/movies/{ movie_id }
 - get sorted movies http://localhost:8080/api/movies?by={ name, rating, relevance, year }&order={ asc, desc }
 - get sorted movies by genre (not case sensitive) http://localhost:8080/api/movies?genre={ genre_name }
 - find movie by name (not case sensitive) http://localhost:8080/api/movies?name={ movie_title }
