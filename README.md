@@ -49,7 +49,7 @@ Developers : Anton Antonov, Vladislav Poljakov, German Hanmamedov
   "password": "string"
 }
 ```
-- Login : http://localhost:8080/api/users/Login  
+- Login : http://localhost:8080/api/users/login  
 ```sh
 {
   "username": "string",
