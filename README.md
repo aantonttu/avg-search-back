@@ -1,7 +1,7 @@
 # Team 24 (AVG) backend
 Developers : Anton Antonov, Vladislav Poljakov, German Hanmamedov  
 [Business analysis](https://gitlab.cs.ttu.ee/gehanm/iti0203-2020-team24-back/-/wikis/Part-1/Business-analysis)  
-[User stories](https://gitlab.cs.ttu.ee/gehanm/iti0203-2020-team24-back/-/wikis/Part-1/User-stories)
+[User stories](https://gitlab.cs.ttu.ee/gehanm/iti0203-2020-team24-back/-/wikis/Part-1/User-stories)  
 [Retros](https://gitlab.cs.ttu.ee/gehanm/iti0203-2020-team24-back/-/wikis/home#Retros)
 
 # Setup guide
