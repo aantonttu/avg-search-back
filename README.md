@@ -13,9 +13,11 @@ Developers : Anton Antonov, Vladislav Poljakov, German Hanmamedov
 - Our backend uses external API to get films from https://rapidapi.com/apidojo/api/imdb8
 - Unfortunately there are only 500 request/month per 1 account token for free.
 - If existing token is out of requests, please register on rapidapi web and change token in ```src/main/java/ee/taltech/team24backend/MoviesApplicationInit.java``` class in ```getMoviesImdbApi()``` and ```getMovieDetailApi()``` functions.
+- NB! In last project version this feature is disabled in order to not to be limited in requests.
 
 ## Amount of movies
-To change amount of movies just go to ```MoviesApplicationInit``` and change ```idArray``` copy range (line 56). Should be 0 to how many you want, but more films requires more time.
+- To change amount of movies just go to ```MoviesApplicationInit``` and change ```idArray``` copy range (line 56). Should be 0 to how many you want, but more films requires more time.
+- NB! In last project version amount of movies can be changed by adding/deleting movies in the same file.
 
 ### Main URL
 - Movies : http://localhost:8080/api/movies/
