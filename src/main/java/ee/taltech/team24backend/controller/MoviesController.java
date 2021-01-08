@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RequestMapping({"movies", "movies2"})
+@RequestMapping("movies")
 @RestController
 public class MoviesController {
 
