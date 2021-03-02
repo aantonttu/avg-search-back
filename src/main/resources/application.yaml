@@ -31,5 +31,5 @@ logging:
     path: ./logs
 
 jwt:
-  secret: secret
-  durationMin: 15
+  secret: topavgteam
+  durationMin: 30

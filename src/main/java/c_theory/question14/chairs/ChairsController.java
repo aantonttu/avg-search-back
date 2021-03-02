@@ -29,7 +29,7 @@ public class ChairsController {
     //todo B create a method to query chairs (plural)
     @GetMapping
     public List<Chair> getChairs(@RequestParam(value = "type", required = false) String type,
-                                 @RequestParam(value = "available", defaultValue = "true", required = false) boolean status,
+                                 @RequestParam(value = "available", required = false) boolean status,
                                  @RequestParam(value = "by", defaultValue = "popular") String by,
                                  @RequestParam(value = "order", defaultValue = "desc") String order) {
         // chairs?type=soft

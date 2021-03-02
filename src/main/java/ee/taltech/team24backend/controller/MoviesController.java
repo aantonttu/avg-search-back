@@ -1,5 +1,6 @@
 package ee.taltech.team24backend.controller;
 
+import ee.taltech.team24backend.dto.CommentDto;
 import ee.taltech.team24backend.dto.MovieDto;
 import ee.taltech.team24backend.security.Roles;
 import ee.taltech.team24backend.service.MovieService;
@@ -17,26 +18,25 @@ public class MoviesController {
     private MovieService movieService;
 
     @GetMapping
-    public List<MovieDto> getMovies() {
+    public List<MovieDto> getMovies(@RequestParam(value = "by", required = false) String by,
+                                    @RequestParam(value = "order", required = false) String order,
+                                    @RequestParam(value = "genre", required = false) String genre,
+                                    @RequestParam(value = "name", required = false) String name) {
+        if (name != null) {
+            if (!name.isBlank()) {
+                return movieService.findByName(name);
+            }
+        } else if (genre != null) {
+            return movieService.getMoviesByGenres(genre);
+        } else if (by != null) {
+            return movieService.sorting(by, order);
+        }
         return movieService.findAll();
     }
 
     @GetMapping("{id}")
     public MovieDto getMovie(@PathVariable Long id) {
         return movieService.convertMovie(movieService.findById(id));
-    }
-
-    @GetMapping("find")
-    public List<MovieDto> getMoviesByName(@RequestParam(value = "name") String name) {
-        return movieService.findByName(name);
-    }
-
-    @GetMapping("sorted")
-    public List<MovieDto> sortMovies(@RequestParam(value = "by", defaultValue = "name") String by,
-                                     @RequestParam(value = "order", defaultValue = "asc") String order,
-                                     @RequestParam(value = "genre", required = false) String genre) {
-        if (genre != null) return movieService.getMoviesByGenres(genre);
-        return movieService.sorting(by, order);
     }
 
     @GetMapping("genres")
@@ -48,5 +48,11 @@ public class MoviesController {
     @DeleteMapping("{id}")
     public void deleteComment(@PathVariable Long id) {
         movieService.deleteMovie(id);
+    }
+
+    @Secured(Roles.USER)
+    @PostMapping("{id}/comments")
+    public MovieDto saveComment(@PathVariable Long id, @RequestBody CommentDto comment) {
+        return movieService.saveComment(id, comment);
     }
 }

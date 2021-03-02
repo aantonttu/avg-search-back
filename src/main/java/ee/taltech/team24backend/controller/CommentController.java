@@ -22,12 +22,6 @@ public class CommentController {
         return commentService.findAll();
     }
 
-    @PostMapping("{movieId}")
-    public CommentDto saveComment(@PathVariable Long movieId, @RequestBody CommentDto comment) {
-        return commentService.getCorrectMovie(movieId, comment);
-    }
-
-    @Secured(Roles.ADMIN)
     @DeleteMapping("{id}")
     public void deleteComment(@PathVariable Long id) {
         commentService.deleteComment(id);
