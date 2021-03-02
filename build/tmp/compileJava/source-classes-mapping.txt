@@ -1,0 +1,177 @@
+ee/taltech/team24backend/security/UserSessionHolder.java
+ ee.taltech.team24backend.security.UserSessionHolder
+ee/taltech/team24backend/security/JwtRequestFilter.java
+ ee.taltech.team24backend.security.JwtRequestFilter
+a_theory/question6/vineyard/Wine.java
+ a_theory.question6.vineyard.Wine
+c_theory/question14/phones/App.java
+ c_theory.question14.phones.App
+ee/taltech/team24backend/MoviesApplicationInit.java
+ ee.taltech.team24backend.MoviesApplicationInit
+ee/taltech/team24backend/Team24backendApplication.java
+ ee.taltech.team24backend.Team24backendApplication
+c_theory/question14/phones/PhonesController.java
+ c_theory.question14.phones.PhonesController
+ee/taltech/team24backend/security/SecurityConfig.java
+ ee.taltech.team24backend.security.SecurityConfig
+c_theory/question14/lessons/Lesson.java
+ c_theory.question14.lessons.Lesson
+ee/taltech/team24backend/security/Roles.java
+ ee.taltech.team24backend.security.Roles
+c_theory/question13/MaterialDesign.java
+ c_theory.question13.MaterialDesign
+ee/taltech/team24backend/security/JwtConfig.java
+ ee.taltech.team24backend.security.JwtConfig
+ee/taltech/team24backend/apiProcessing/Ratings.java
+ ee.taltech.team24backend.apiProcessing.Ratings
+ee/taltech/team24backend/dto/UserDto.java
+ ee.taltech.team24backend.dto.UserDto
+ee/taltech/team24backend/repository/CommentRepository.java
+ ee.taltech.team24backend.repository.CommentRepository
+a_theory/question6/chocolate/Cake.java
+ a_theory.question6.chocolate.Cake
+ a_theory.question6.chocolate.Cake$Size
+ a_theory.question6.chocolate.Cake$Sweetness
+b_theory/question11/Nr3isL.java
+ b_theory.question11.Nr3isL
+c_theory/question14/blogs/Blog.java
+ c_theory.question14.blogs.Blog
+a_theory/question3/Parrot.java
+ a_theory.question3.Animal
+ a_theory.question3.Parrot
+ee/taltech/team24backend/exceptions/UserException.java
+ ee.taltech.team24backend.exceptions.UserException
+ee/taltech/team24backend/dto/authDto/LoginResponse.java
+ ee.taltech.team24backend.dto.authDto.LoginResponse
+ ee.taltech.team24backend.dto.authDto.LoginResponse$LoginResponseBuilder
+ee/taltech/team24backend/service/UserService.java
+ ee.taltech.team24backend.service.UserService
+ee/taltech/team24backend/exceptions/CommentNotFoundException.java
+ ee.taltech.team24backend.exceptions.CommentNotFoundException
+c_theory/question14/chairs/Chair.java
+ c_theory.question14.chairs.Chair
+c_theory/question14/blogs/BlogsController.java
+ c_theory.question14.blogs.BlogsController
+a_theory/question6/art/ArtCollector.java
+ a_theory.question6.art.ArtCollector
+ee/taltech/team24backend/dto/authDto/LoginDto.java
+ ee.taltech.team24backend.dto.authDto.LoginDto
+ee/taltech/team24backend/dto/MovieDto.java
+ ee.taltech.team24backend.dto.MovieDto
+b_theory/question11/Nr2isO.java
+ b_theory.question11.CubeVolCalc
+ b_theory.question11.Nr2isO
+ b_theory.question11.SphereVolCalc
+ b_theory.question11.VolumeCalc
+ee/taltech/team24backend/controller/CommentController.java
+ ee.taltech.team24backend.controller.CommentController
+ee/taltech/team24backend/model/User.java
+ ee.taltech.team24backend.model.User
+ee/taltech/team24backend/service/LoginService.java
+ ee.taltech.team24backend.service.LoginService
+a_theory/question3/Abstraction.java
+ a_theory.question3.Abstraction
+b_theory/question8/CD.java
+ b_theory.question8.CD
+ee/taltech/team24backend/repository/UsersRepository.java
+ ee.taltech.team24backend.repository.UsersRepository
+ee/taltech/team24backend/apiProcessing/PlotOutline.java
+ ee.taltech.team24backend.apiProcessing.PlotOutline
+ee/taltech/team24backend/apiProcessing/Image.java
+ ee.taltech.team24backend.apiProcessing.Image
+ee/taltech/team24backend/configuration/SwaggerConfig.java
+ ee.taltech.team24backend.configuration.SwaggerConfig
+ee/taltech/team24backend/model/Movie.java
+ ee.taltech.team24backend.model.Movie
+ee/taltech/team24backend/security/RestAuthenticationEntryPoint.java
+ ee.taltech.team24backend.security.RestAuthenticationEntryPoint
+c_theory/question14/lessons/LessonsController.java
+ c_theory.question14.lessons.LessonsController
+a_theory/question2/Gradle.java
+ a_theory.question2.Gradle
+b_theory/question11/FirstReadMeSOLID.java
+ b_theory.question11.FirstReadMeSOLID
+a_theory/question1/Compilation.java
+ a_theory.question1.Compilation
+ee/taltech/team24backend/model/Comment.java
+ ee.taltech.team24backend.model.Comment
+a_theory/question4/DependencyInjection.java
+ a_theory.question4.DependencyInjection
+ee/taltech/team24backend/exceptions/MovieNotFoundException.java
+ ee.taltech.team24backend.exceptions.MovieNotFoundException
+ee/taltech/team24backend/apiProcessing/Title.java
+ ee.taltech.team24backend.apiProcessing.Title
+ee/taltech/team24backend/dto/CommentDto.java
+ ee.taltech.team24backend.dto.CommentDto
+ee/taltech/team24backend/service/MovieService.java
+ ee.taltech.team24backend.service.MovieService
+ee/taltech/team24backend/controller/MoviesController.java
+ ee.taltech.team24backend.controller.MoviesController
+a_theory/question6/sheep/Sheep.java
+ a_theory.question6.sheep.Sheep
+ee/taltech/team24backend/apiProcessing/PlotSummary.java
+ ee.taltech.team24backend.apiProcessing.PlotSummary
+ee/taltech/team24backend/service/CommentService.java
+ ee.taltech.team24backend.service.CommentService
+ee/taltech/team24backend/dto/authDto/RegisterDto.java
+ ee.taltech.team24backend.dto.authDto.RegisterDto
+ee/taltech/team24backend/UsersApplicationInit.java
+ ee.taltech.team24backend.UsersApplicationInit
+c_theory/question14/chairs/ChairsController.java
+ c_theory.question14.chairs.ChairsController
+ee/taltech/team24backend/apiProcessing/MovieApi.java
+ ee.taltech.team24backend.apiProcessing.MovieApi
+a_theory/question6/chocolate/Chocolate.java
+ a_theory.question6.chocolate.Chocolate
+b_theory/question11/Nr1isS.java
+ b_theory.question11.Nr1isS
+ b_theory.question11.PayCalculator
+ b_theory.question11.User
+ b_theory.question11.UserServiceAfter
+ b_theory.question11.UserServiceBefore
+ee/taltech/team24backend/security/JwtTokenProvider.java
+ ee.taltech.team24backend.security.JwtTokenProvider
+a_theory/question6/vineyard/Vineyard.java
+ a_theory.question6.vineyard.Vineyard
+ee/taltech/team24backend/security/ThisUserDetailsService.java
+ ee.taltech.team24backend.security.ThisUserDetailsService
+ee/taltech/team24backend/repository/MovieRepository.java
+ ee.taltech.team24backend.repository.MovieRepository
+a_theory/question5/ApplicationLayers.java
+ a_theory.question5.ApplicationLayers
+b_theory/question11/Nr4isI.java
+ b_theory.question11.Cuboid
+ b_theory.question11.Nr4isI
+ b_theory.question11.ShapeAreaInterface
+ b_theory.question11.ShapeInterface
+ b_theory.question11.ShapeVolumeInterface
+ee/taltech/team24backend/security/EnumRole.java
+ ee.taltech.team24backend.security.EnumRole
+b_theory/question7/CI.java
+ b_theory.question7.CI
+b_theory/question9/Docker.java
+ b_theory.question9.Docker
+c_theory/question14/phones/Phone.java
+ c_theory.question14.phones.Phone
+ee/taltech/team24backend/apiProcessing/MovieId.java
+ ee.taltech.team24backend.apiProcessing.MovieId
+c_theory/question12/Security.java
+ c_theory.question12.Security
+a_theory/question6/sheep/SheepFarm.java
+ a_theory.question6.sheep.SheepFarm
+b_theory/question11/Nr5isD.java
+ b_theory.question11.Nr5isD
+b_theory/question10/DBaaS.java
+ b_theory.question10.DBaaS
+a_theory/question6/art/Painting.java
+ a_theory.question6.art.Painting
+c_theory/question14/blogs/Author.java
+ c_theory.question14.blogs.Author
+ee/taltech/team24backend/controller/UserController.java
+ ee.taltech.team24backend.controller.UserController
+c_theory/question14/chairs/Designer.java
+ c_theory.question14.chairs.Designer
+c_theory/question14/lessons/Students.java
+ c_theory.question14.lessons.Students
+ee/taltech/team24backend/security/ThisUser.java
+ ee.taltech.team24backend.security.ThisUser

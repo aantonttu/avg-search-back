@@ -1,0 +1,2 @@
+ee/taltech/team24backend/Team24backendApplicationTests.java
+ ee.taltech.team24backend.Team24backendApplicationTests

@@ -1,0 +1,23 @@
+{
+  "groups": [
+    {
+      "name": "jwt",
+      "type": "ee.taltech.team24backend.security.JwtConfig",
+      "sourceType": "ee.taltech.team24backend.security.JwtConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "jwt.duration-min",
+      "type": "java.lang.Integer",
+      "sourceType": "ee.taltech.team24backend.security.JwtConfig",
+      "defaultValue": 0
+    },
+    {
+      "name": "jwt.secret",
+      "type": "java.lang.String",
+      "sourceType": "ee.taltech.team24backend.security.JwtConfig"
+    }
+  ],
+  "hints": []
+}
